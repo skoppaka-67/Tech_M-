@@ -1,0 +1,192 @@
+<div>
+    <app-page-header [heading]="'Program Process Flow Diagram'" [icon]="'fa-th-list'"></app-page-header>
+</div>
+<div id="myModal" class="modal-window">
+    <ng-template #content let-c="close" let-d="dismiss">
+      <!-- <div class="container" id="content sticky-top"> -->
+      <div class="modal-header" id="content">
+        <label id="flowName" style="font-weight: bold;" name="flowName">{{flowName}}</label> &nbsp;
+        <div>		
+          <button id="dwnBtn" class="btn btn-primary" style="float:right;" (click)="domtoImage()">Download</button>&nbsp;&nbsp;		
+          <button id="paraCodeBtn" class="btn btn-primary" style="float:center;" (click)="showParaCode()">Show Code</button>&nbsp;&nbsp;		
+          <button id="flowChartBtn2" class="btn btn-primary" style="float:center;" (click)="showFlowChartTwo()">Show Annotated Version</button>&nbsp;&nbsp;
+          <button id="flowChartBtn" class="btn btn-primary" style="float:left;" (click)="showFlowChart()">Show Flow Chart</button>		
+        </div>
+          <label class="close" aria-label="Close" (click)="d('Cross click');">
+              <span aria-hidden="true">&times;</span>
+          </label>
+        </div>
+        <!-- <div class="row"> -->
+          <div class="modal-body" id="contentBody">
+            <label id="flowChartErrMsg"></label>
+            <div  style=" padding: 10px; cursor: move;" id="canvas" class="canvas unselectable"></div> 
+            <div id="canvasCode" class="selectable"></div>
+            <div  style=" padding: 10px; cursor: move;" id="canvasTwo" class="canvas unselectable"></div> 
+        <!-- </div> ngDraggable-->
+        <!-- <div class="container text-center">
+          <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Close</button> -->
+        </div>
+      </ng-template>
+</div>
+<!-- <div class="col-md-12" style="display:flex;">
+    <div class="col-md-2"><label style="font-weight:bold">Program : </label></div>
+    <div class="col-md-3"><select class="form-control" id="cboSelect" (change)="onChange($event.target.value)">
+      <option value="">--Select Program--</option>
+      <option *ngFor="let component of componentList" value={{component}}>
+          {{component}}
+      </option>
+    </select></div>
+    <div class="col-md-2"><button class="btn btn-primary" (click)="onSubmit()">Submit</button></div>
+    // <button (click)="window.print();" class="btn btn-primary" style="float:right;">Download</button> 
+    <button id="downloadBtn" (click)="printData()" class="btn btn-primary" style="float:right;">Download</button>
+  </div>   -->
+
+  <div class="col-md-12" style="display:flex;">
+    <div class="col-md-2"><label style="font-weight:bold">Application: </label></div>
+    <div class="col-md-3">
+    <select class="form-control" ng-model="cmbAll" id="appln" (change)="applicationTypeOnchange($event)">
+      <option value="">--Select Application--</option>
+      <option *ngFor="let application of applicationTypeList" value={{application}}>
+        {{application}}
+      </option>
+      </select>
+    </div>
+    <div class="col-md-2"><label style="font-weight:bold">Program Name: </label></div>
+    <div class="col-md-3">
+      <select class="form-control" id="pgmName" ng-model="pgmName" (change)="programNameOnchange($event)">
+      <option value="">--Select Program--</option>
+      <option *ngFor="let program of programNameList" value={{program}}>
+        {{program}}
+      </option>
+    </select></div>
+    <div class="col-md-1">
+        <!-- <button class="btn btn-primary" (click)="onSubmit()">Submit</button> -->
+      </div>
+      <div class="col-md-1">
+      <!-- export2Doc(); printData();-->
+      <!-- <button class="btn btn-primary" id="downloadBtn" (click)="printData();">Download</button> -->
+    </div>
+  </div>
+  <div class="col-md-12" style="display:flex;"></div>
+  <div class="col-md-12" style="display:flex;">
+    <div class="col-md-2"><label style="font-weight:bold">Event List: </label></div>
+    <div class="col-md-3">
+      <select class="form-control" ng-model="cmbAll" id="extCall" (change)="eventOnChange($event)">
+        <option value="">--Select Event--</option>
+        <option *ngFor="let event of eventList" value={{event}}>
+          {{event}}
+        </option>
+      </select>
+    </div>
+    <div class="col-md-1">
+      <button class="btn btn-primary" id="submitBtn" (click)="onSubmit()">Submit</button>
+    </div>
+    <div class="col-md-1">
+      <!-- export2Doc(); printData();-->
+      <button class="btn btn-primary" id="downloadBtn" (click)="printData();">Download</button>
+    </div>
+  </div>
+
+  <div>
+    <label id ="processErrMsg">
+    </label>
+  </div>
+<div id="procFlow">
+     <!-- [label]="hierarchialGraph.label" -->
+        <ngx-graph id="processFlow"
+          [clusters]="clusters"
+          [layout]=""
+          [links]="hierarchialGraph.links"
+          [nodes]="hierarchialGraph.nodes"
+          [legend]="false"
+          [curve]="curve"
+          [draggingEnabled]="false"
+          [view]="view"
+        >
+        <ng-template #defsTemplate>
+          <svg:marker id="arrow" viewBox="0 -5 10 10" refX="8" refY="0" markerWidth="4" markerHeight="4" orient="auto">
+            <svg:path d="M0,-5L10,0L0,5" class="arrow-head" />
+          </svg:marker>
+        </ng-template>
+              
+          <ng-template #nodeTemplate let-node>
+            <svg:g class="node"
+            ngx-tooltip
+            [tooltipPlacement]="'top'"
+            [tooltipType]="'tooltip'"
+            [tooltipTitle]=""
+          >
+              <!-- <svg:rect [attr.width]="node.dimension.width" [attr.height]="node.dimension.height" [attr.fill]="node.data.color" (click)="onClick({name: node.label})"/>
+              <svg:text alignment-baseline="central" [attr.x]="10" [attr.y]="node.dimension.height / 2" (click)="onClick({name: node.label})">{{node.label}}</svg:text> -->
+              <svg:rect [attr.width]="node.dimension.width" [attr.height]="node.dimension.height" [attr.fill]="node.data.color" (click)="open(content,{name: node.label})"/>
+              <svg:text alignment-baseline="central" [attr.x]="10" [attr.y]="node.dimension.height / 2" (click)="open(content,{name: node.label})">{{node.label}}</svg:text>
+            </svg:g>
+          </ng-template>
+  
+          <ng-template #linkTemplate let-link>
+              <svg:g class="edge">
+                <svg:path
+                  class="line" stroke-width="2" marker-end="url(#arrow)" >
+                </svg:path>
+                <svg:text
+                  class="edge-label"
+                  text-anchor="middle">
+                  <textPath
+                    style="fill: #666;"
+                    [attr.href]="'#' + link.id"
+                    startOffset="60%">
+                    {{ link.label }}
+                  </textPath>
+                </svg:text>
+              </svg:g>
+            </ng-template>
+        </ngx-graph> 
+    
+      
+  
+ 
+  <!-- <ngx-graph id="chart" 
+ 
+  [links]="hierarchialGraph.links"
+  [nodes]="hierarchialGraph.nodes"
+  [legend]="false"
+  [curve]="curve"
+  [draggingEnabled]="false"
+  >
+
+  <ng-template #defsTemplate>
+    <svg:marker id="arrow" viewBox="0 -5 10 10" refX="8" refY="0" markerWidth="4" markerHeight="4" orient="auto">
+      <svg:path d="M0,-5L10,0L0,5" class="arrow-head" />
+    </svg:marker>
+  </ng-template>
+
+  <ng-template #nodeTemplate let-node>
+   <svg:g class="node"
+    ngx-tooltip
+    [tooltipPlacement]="'top'"
+    [tooltipType]="'tooltip'"
+    [tooltipTitle]="node.position"
+    >
+     <svg:rect [attr.width]="node.width" [attr.height]="node.height" [attr.fill]="node.options.color" />
+      <svg:text alignment-baseline="central" [attr.x]="10" [attr.y]="node.height / 2">{{node.label}}</svg:text>
+    </svg:g>
+  </ng-template>
+
+  <ng-template #linkTemplate let-link>
+    <svg:g class="edge">
+      <svg:path
+        class="line"
+        stroke-width="2"
+        marker-end="url(#arrow)" >
+      </svg:path>
+      <svg:text
+        class="edge-label"
+        text-anchor="middle">
+  
+    </svg:text>
+    </svg:g>
+  </ng-template>
+
+  </ngx-graph> -->
+</div>
+

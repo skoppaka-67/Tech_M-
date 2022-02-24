@@ -1,0 +1,19 @@
+<div class="login-page" [@routerTransition]>
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <img src="assets/images/logo.png" width="150px" class="user-avatar" />
+            <h2>Login</h2>
+            <form>
+                <div class="form-content">
+                    <div class="form-group">
+                        <input type="text" id="Uname" (keydown)="keyDownFunction($event)" ng-model="name" class="form-control input-underline input-lg" placeholder="User ID" required>
+                        <br>
+                        <input type="password" id="Upwd" (keydown)="keyDownFunction($event)" ng-model="password" class="form-control input-underline input-lg" placeholder="Password" required>
+                    </div>
+                    <label id="incorrectCreds"></label>
+                </div> 
+                <button id="loginBtn" class="btn rounded-btn" (click)="onLoggedin()" type="button">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

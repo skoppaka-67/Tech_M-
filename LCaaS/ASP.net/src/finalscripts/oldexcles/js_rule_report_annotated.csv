@@ -1,0 +1,192 @@
+rule_id,file_name,function_name,feild_name,External_rule_id,rules_statement,Rule_Relation,rule_description,rule_type,type,Lob,dependent_control,partent_rule_id,Event_type,_id
+Rule-1,PFSpoilInput,cboPfSplgType_onchange,cboPfSplgType,,"{              
+1.)if (CLAS.find(""cboPfSplgType"").get_value() == ""2"")              
+{              
+CLAS.find(""chkPfSplgRefMaint"").set_checked(false);              
+}              
+else              
+{              
+CLAS.find(""chkPfSplgRefMaint"").set_enabled(false);              
+}              
+}",,"{              
+1.)if (CLAS.find(""cboPfSplgType"").get_value() == ""2"")              
+{              
+CLAS.find(""chkPfSplgRefMaint"").set_checked(false);              
+}              
+else              
+{              
+CLAS.find(""chkPfSplgRefMaint"").set_enabled(false);              
+}              
+}",client side,,LobPF,,,OnClientChange,5fa93d2489d2a23c7d969957
+Rule-2,PFSpoilInput,txtPfSplgLim_onfocus,txtPfSplgLim,,"{              
+var sToolTip = """";              
+var nSplgLimit = 0;              
+var nStoredLimit = 0;              
+var sLimit = CLAS.find(""txtPfSplgLim"").get_text().trim();              
+sLimit = sLimit.replace("","", """");              
+1.)if (clientVariables.WalkthruType == """")              
+{              
+2.)if (sLimit.length > 0)              
+{              
+nSplgLimit = parseInt(sLimit);              
+sLimit = clientVariables.PfSplgLim.trim();              
+sLimit = sLimit.replace("","", """");              
+3.)if (sLimit.length > 0)              
+{              
+nStoredLimit = parseInt(sLimit);              
+}              
+}              
+4.)if ((clientVariables.UserType == ""AGENT"") && (nSplgLimit > 100000))              
+{              
+sToolTip = ""'Enter limit - Policy must be reviewed by the AMS or Underwriter prior to binding coverage.'"";              
+}              
+5.)if ((clientVariables.UserType != ""AGENT"") && (nSplgLimit > 100000) && (nSplgLimit <= 250000))              
+{              
+sToolTip = ""'Enter limit - Spoilage Limit Requires Region U/W Manager / Field Ops Manager Approval.'"";              
+}              
+6.)if ((clientVariables.UserType != ""AGENT"") && (nSplgLimit > 250000))              
+{              
+sToolTip = ""'Enter limit - Spoilage Limit Requires SBU Approval.'"";              
+}              
+7.)if ((sEvent == ""BLUR"") && (nStoredLimit == nSplgLimit))              
+{              
+sToolTip = ""Enter limit"";              
+}              
+8.)if (sToolTip.length > 0)              
+{              
+CLAS.find('txtPfSplgLim').set_toolTip(sToolTip);              
+}              
+CLAS.find(""txtPfSplgLim"").set_text(CLAS.find(""txtPfSplgLim"").get_text().insertCommas());              
+}              
+}",,"{              
+var sToolTip = """";              
+var nSplgLimit = 0;              
+var nStoredLimit = 0;              
+var  Upper_Limit  = CLAS.find(""txtPfSplgLim"").get_text().trim();              
+ Upper_Limit  =  Upper_Limit .replace("","", """");              
+1.)if (clientVariables.WalkthruType == """")              
+{              
+2.)if ( Upper_Limit .length > 0)              
+{              
+nSplgLimit = parseInt( Upper_Limit );              
+ Upper_Limit  = clientVariables.PfSplgLim.trim();              
+ Upper_Limit  =  Upper_Limit .replace("","", """");              
+3.)if ( Upper_Limit .length > 0)              
+{              
+nStoredLimit = parseInt( Upper_Limit );              
+}              
+}              
+4.)if ((clientVariables.UserType == ""AGENT"") && (nSplgLimit > 100000))              
+{              
+sToolTip = ""'Enter limit - Policy must be reviewed by the AMS or Underwriter prior to binding coverage.'"";              
+}              
+5.)if ((clientVariables.UserType != ""AGENT"") && (nSplgLimit > 100000) && (nSplgLimit <= 250000))              
+{              
+sToolTip = ""'Enter limit - Spoilage Limit Requires Region U/W Manager / Field Ops Manager Approval.'"";              
+}              
+6.)if ((clientVariables.UserType != ""AGENT"") && (nSplgLimit > 250000))              
+{              
+sToolTip = ""'Enter limit - Spoilage Limit Requires SBU Approval.'"";              
+}              
+7.)if ((sEvent == ""BLUR"") && (nStoredLimit == nSplgLimit))              
+{              
+sToolTip = ""Enter limit"";              
+}              
+8.)if (sToolTip.length > 0)              
+{              
+CLAS.find('txtPfSplgLim').set_toolTip(sToolTip);              
+}              
+CLAS.find(""txtPfSplgLim"").set_text(CLAS.find(""txtPfSplgLim"").get_text().insertCommas());              
+}              
+}",client side,,LobPF,,,OnClientFocus,5fa93d2489d2a23c7d969958
+Rule-3,PFSpoilInput,insertCommas,txtPfSplgLim,,"var txtBox = CLAS.find(txtCtrl);              
+txtBox.set_text(txtBox.get_text().insertCommas());              
+}",,"var txtBox = CLAS.find(txtCtrl);              
+txtBox.set_text(txtBox.get_text().insertCommas());              
+}",client side,,LobPF,,Rule-2,OnClientFocus,5fa93d2489d2a23c7d969959
+Rule-4,PFSpoilInput,txtPfSplgLim_onfocus,txtPfSplgLim,,"{              
+var sToolTip = """";              
+var nSplgLimit = 0;              
+var nStoredLimit = 0;              
+var sLimit = CLAS.find(""txtPfSplgLim"").get_text().trim();              
+sLimit = sLimit.replace("","", """");              
+1.)if (clientVariables.WalkthruType == """")              
+{              
+2.)if (sLimit.length > 0)              
+{              
+nSplgLimit = parseInt(sLimit);              
+sLimit = clientVariables.PfSplgLim.trim();              
+sLimit = sLimit.replace("","", """");              
+3.)if (sLimit.length > 0)              
+{              
+nStoredLimit = parseInt(sLimit);              
+}              
+}              
+4.)if ((clientVariables.UserType == ""AGENT"") && (nSplgLimit > 100000))              
+{              
+sToolTip = ""'Enter limit - Policy must be reviewed by the AMS or Underwriter prior to binding coverage.'"";              
+}              
+5.)if ((clientVariables.UserType != ""AGENT"") && (nSplgLimit > 100000) && (nSplgLimit <= 250000))              
+{              
+sToolTip = ""'Enter limit - Spoilage Limit Requires Region U/W Manager / Field Ops Manager Approval.'"";              
+}              
+6.)if ((clientVariables.UserType != ""AGENT"") && (nSplgLimit > 250000))              
+{              
+sToolTip = ""'Enter limit - Spoilage Limit Requires SBU Approval.'"";              
+}              
+7.)if ((sEvent == ""BLUR"") && (nStoredLimit == nSplgLimit))              
+{              
+sToolTip = ""Enter limit"";              
+}              
+8.)if (sToolTip.length > 0)              
+{              
+CLAS.find('txtPfSplgLim').set_toolTip(sToolTip);              
+}              
+CLAS.find(""txtPfSplgLim"").set_text(CLAS.find(""txtPfSplgLim"").get_text().insertCommas());              
+}              
+}",,"{              
+var sToolTip = """";              
+var nSplgLimit = 0;              
+var nStoredLimit = 0;              
+var  Upper_Limit  = CLAS.find(""txtPfSplgLim"").get_text().trim();              
+ Upper_Limit  =  Upper_Limit .replace("","", """");              
+1.)if (clientVariables.WalkthruType == """")              
+{              
+2.)if ( Upper_Limit .length > 0)              
+{              
+nSplgLimit = parseInt( Upper_Limit );              
+ Upper_Limit  = clientVariables.PfSplgLim.trim();              
+ Upper_Limit  =  Upper_Limit .replace("","", """");              
+3.)if ( Upper_Limit .length > 0)              
+{              
+nStoredLimit = parseInt( Upper_Limit );              
+}              
+}              
+4.)if ((clientVariables.UserType == ""AGENT"") && (nSplgLimit > 100000))              
+{              
+sToolTip = ""'Enter limit - Policy must be reviewed by the AMS or Underwriter prior to binding coverage.'"";              
+}              
+5.)if ((clientVariables.UserType != ""AGENT"") && (nSplgLimit > 100000) && (nSplgLimit <= 250000))              
+{              
+sToolTip = ""'Enter limit - Spoilage Limit Requires Region U/W Manager / Field Ops Manager Approval.'"";              
+}              
+6.)if ((clientVariables.UserType != ""AGENT"") && (nSplgLimit > 250000))              
+{              
+sToolTip = ""'Enter limit - Spoilage Limit Requires SBU Approval.'"";              
+}              
+7.)if ((sEvent == ""BLUR"") && (nStoredLimit == nSplgLimit))              
+{              
+sToolTip = ""Enter limit"";              
+}              
+8.)if (sToolTip.length > 0)              
+{              
+CLAS.find('txtPfSplgLim').set_toolTip(sToolTip);              
+}              
+CLAS.find(""txtPfSplgLim"").set_text(CLAS.find(""txtPfSplgLim"").get_text().insertCommas());              
+}              
+}",client side,,LobPF,,,OnClientBlur,5fa93d2489d2a23c7d96995a
+Rule-5,PFSpoilInput,insertCommas,txtPfSplgLim,,"var txtBox = CLAS.find(txtCtrl);              
+txtBox.set_text(txtBox.get_text().insertCommas());              
+}",,"var txtBox = CLAS.find(txtCtrl);              
+txtBox.set_text(txtBox.get_text().insertCommas());              
+}",client side,,LobPF,,Rule-4,OnClientBlur,5fa93d2489d2a23c7d96995b

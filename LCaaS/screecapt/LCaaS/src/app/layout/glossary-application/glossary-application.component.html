@@ -1,0 +1,81 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Glossary Report'" [icon]="'fa fa-fw fa-list'"></app-page-header>
+</div> 
+<div>
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header" id="content">
+      <label id="compName" name="compName">{{compName}}</label>
+      <label class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </label>
+    </div>
+    <div class="modal-body" id="contentBody">
+      <div id="canvasCode"></div>
+    </div>
+  </ng-template>
+</div>
+<div class="col-md-12" style="display:flex;">
+	<div class="col-md-2"><label style="font-weight:bold">Application: </label></div>
+	<div class="col-md-3">
+	<select class="form-control" ng-model="cmbAll" id="appln" (change)="applicationTypeOnchange($event)">
+		<option id="appln" value="">--Select Application--</option>
+		<option id="appln" *ngFor="let application of applicationTypeList" value={{application}}>
+			{{application}}
+		</option>
+	  </select>
+	</div>
+	<div class="col-md-1"><label style="font-weight:bold">Program Name: </label></div>
+	<div class="col-md-3">
+	  <select class="form-control" id="pgmName" ng-model="pgmName" (change)="programNameOnchange($event)">
+		<option id="pgmName" value="">--Select Program--</option>
+		<option id="pgmName" *ngFor="let program of programNameList" value={{program}}>
+			{{program}}
+		</option>
+	</select></div>
+	<div class="col-md-1">
+    <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+   </div>
+</div>
+<div class="col-md-12" style="display:flex;">
+  <!-- *ngIf="userId" -->
+  <div class="col-md-2">
+    <label style="font-weight:bold">Load Excel : </label>
+  </div>
+  <div class="col-md-3">
+    <input type="file" id="fileUploader" accept=".xls, .xlsx"/>
+  </div>
+  <div class="col-md-2">
+    <button class="btn btn-primary" id="uploadBtn" (click)="updateDataBase()">Upload</button>
+  </div>
+  <div class="popup" (mouseover)="info()" (mouseout)="info()">
+      <i class="fa fa-fw fa-info-circle"></i>
+      <span class="popuptext" id="myPopup">Upload excel to update Business Meaning</span>
+  </div>
+  <div [style.visibility]="showLoader ? 'visible' : 'hidden'" style="text-align: center"><i class="fa fa-spinner fa-spin fa-4x"></i>
+    &nbsp;
+  </div>
+  <div class="col-md-2">
+      <label id="uploadMsg"></label>
+  </div>
+  <div class="col-md-2">
+    <button class="btn btn-primary" id="updateBtn" (click)="updateVariableInfo()">Update Annotations</button>
+  </div>
+</div>
+<div class="row">
+    <div class="col-xl-12">
+        <div><a (click)="exportAsXLSX()" id="exportXlsx" onmouseover="" class="menu_links" style="cursor: pointer;"><img src="assets/images/export.png" id="exportImg" height="25" width="25" style="float:right"/></a>
+      <table id="glossary" style="overflow-wrap:break-all;border-spacing:0px;width:100%;" class="table table-striped table-bordered table-sm row-border hover" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" datatable >
+        <thead>
+          <tr>
+              <th style="text-align:center; color: white; background-color:dimgray; font-size: 9pt;" *ngFor="let header of dataSets.headers">{{header | uppercase}}</th>            
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let item of dataSets.data">
+            <td style="overflow-wrap: break-all;" *ngFor="let header of dataSets.headers">{{item[header]}}</td>
+            </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div id="excelJson" hidden></div>

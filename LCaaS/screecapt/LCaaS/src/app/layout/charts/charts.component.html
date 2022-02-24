@@ -1,0 +1,95 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Charts'" [icon]="'fa-bar-chart-o'"></app-page-header>
+</div>
+ <div id="canvas" style="width: 1000px;height: auto;">
+
+  <!-- svg-pan-zoom-container -->
+   </div>
+  <!-- <ng-template #jhippy let-c="close" let-d="dismiss">
+    <div class="modal-header" id="jhippy">
+      <label id="jhipster"><strong>CICS Black Screen</strong></label>
+      <label class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </label>
+    </div>
+    <div class="modal-body screenCode" id="jhipsterJDL">
+        &nbsp;&nbsp;&nbsp;EMP ID    :&nbsp;&nbsp;EMP NAME  :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EMP SALARY:<br>MSGEMP DETAIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;______________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_____
+    </div>
+  </ng-template>
+</div>
+<div class="row">
+  <div class="col-md-2">
+      <button class="btn btn-primary" (click)="showJDL(jhippy)">Show JDL</button>
+  </div>
+</div> -->
+<!-- <div>
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header" id="content">
+      <label id="jhipster" >JHipster Application</label>
+      <label class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </label>
+    </div>
+    <div class="modal-body" id="jhipsterApp">
+    </div>
+  </ng-template>
+</div>
+<div class="col-md-12" style="display:flex;">
+  <div class="col-md-3">
+  </div>
+  <div class="col-md-3">
+    <button class="btn btn-primary" (click)="showJDL(jhippy)">Show JDL</button>
+  </div>
+  <div class="col-md-6">
+    <button class="btn btn-primary" (click)="launchApp(content)">Launch Application</button>
+  </div>
+</div>
+<div id="divdatamodelreportcontent" class="row angular-with-newlines">
+  <div class="col-xl-12">
+    <div>
+    <table #dtTable datatable id="dataModelReportTbl" style="overflow-wrap:break-word;border-spacing:0px;width:100%;" class="table table-striped table-bordered table-sm row-border hover" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+      <thead>
+        <tr>
+            <th style="text-align:center; color: white; background-color:dimgray; font-size: 9pt;" *ngFor="let header of dataSets.headers">{{header | uppercase}}</th>            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of dataSets.data">
+          <td style="overflow-wrap: break-word;" *ngFor="let header of dataSets.headers">{{item[header]}}</td>
+          </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+</div> -->
+
+
+
+<!-- <div class="col-md-12" style="display:flex;">
+  <div class="col-md-3"><label style="font-weight:bold">Field Name : </label></div>
+  <div class="col-md-3"><select class="form-control" id="fieldID" (change)="onChange($event.target.value)">
+    <option value="">--Select Value--</option>
+    <option *ngFor="let value of valueList" value={{value}}>
+        {{value}}
+    </option>
+  </select></div>
+  <!- - <div class="col-md-2"><button class="btn btn-primary" (click)="onSubmit()">Submit</button></div> - ->
+</div>
+<div class="col-md-12" style="display:flex;">
+  <div class="col-md-3"><label style="font-weight:bold">Field Name : </label></div>
+  <div class="col-md-3"><input type="text" id="field1ID"></div>
+</div> 
+<div class="col-md-12" style="display:flex;">
+  <div class="col-md-3"><input type="file" id="fileUploader" accept=".xls, .xlsx"/></div>
+  <div id="opFile"></div>
+</div>  -->
+
+
+<!-- <div class="card-body" id="appwisecyclo">
+  <canvas baseChart height="190" [datasets]="lineChart2Data" [labels]="lineChart2Labels" [options]="lineChart2Options" [colors]="lineChart2Colors" [legend]="lineChart2Legend" [chartType]="lineChart2Type" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+  </canvas>
+</div> -->
+
+<!-- <div id="sankey_multiple" style="width: 900px; height: 300px;"></div> -->
+
+          

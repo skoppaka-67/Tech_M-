@@ -1,0 +1,5 @@
+{
+    "instance": "prod",
+    "apiUrl" : "http://13.234.96.84:5000/api/v1/"
+}
+

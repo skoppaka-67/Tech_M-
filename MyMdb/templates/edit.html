@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+      <form action="{{ url_for('edit1') }}" method = "POST">
+
+      <label for="Popularity">Popularity:&nbsp;&nbsp;</label>
+      <input type="text" id="Popularity" value='{{ popu }}' name="popular" required><br><br>
+
+      <label for="Director">Director:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <input type="text" id="Director" value="{{ dir }}" name="director" required><br><br>
+
+      <label for="Genre">Genre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+       <input type="text" id="Genre" value="{{ gen }}" name="genre" required><br><br>
+
+      <label for="imdb_score">imdb_score:</label>
+      <input type="text" id="imdb_score" value="{{ score }}" name="imdb_score" required><br><br>
+
+      <label for="name" style="display: none;">name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <input type="hidden" id="name" value="{{ name }}" name="name" required><br><br>
+
+
+      <input type="submit" value="Edit Movie">
+
+    </form>
+ <br><br><a href = '/logout'>click here to logout </a>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+filename,lob,panel_id,SectionID,SectionName,CLASLabel,ScreenField,CLASField,Type,Required,Length,Allowkeys,Min-Max,Tooltip,Enable,DropdownValue,StoredValue,ErrorMessage,Comments
+PFLaMrInput.aspx,LobCP,,,,,lblLocNumBuildingInfo,,label,,,,,,,,,,
+PFLaMrInput.aspx,LobCP,,,,,lblLocAddress,,label,,,,,,,,,,
+PFLaMrInput.aspx,LobCP,,pnlLaMr,,=Cause of Loss:,ltxtCauseOfLoss1,,label,,,,,,,,,,
+PFLaMrInput.aspx,LobCP,,pnlLaMr,,,ltxtCauseOfLoss2,,label,,,,,,,,,,
+PFLaMrInput.aspx,LobCP,,pnlLaMr,,Loss Assessment Coverage (Condos) Limit,cboPfLossLimit,PfLossLimit,ComboBox,,,"1.) 0-9,",,"1.) If LA coverage requested, enter LA limit.  Higher limits must be in increments of $5,000",,"1.)Proc name:USP_GET_PF_LA_LIMIT_ISO2012,Usp_Get_Pf_La_Limit_Iso2012_Exp,USP_GET_PF_LA_LIMIT, Key name:LALIMIT, Paramater:Null","                        .Add(DataValueField, Code)
+",,
+PFLaMrInput.aspx,LobCP,,pnlLaMr,,,ddlPfLossLimit,,DropDownList,,,,,,,"1.)Proc name:USP_GET_PF_LA_LIMIT_ISO2012,Usp_Get_Pf_La_Limit_Iso2012_Exp,USP_GET_PF_LA_LIMIT, Key name:LALIMIT, Paramater:Null","                        .Add(DataValueField, Code)
+",,
+PFLaMrInput.aspx,LobCP,,pnlLaMr,,,cboPfLossCol,PfLossCol,DropDownList,,,,,1.) Enter LA COL,,"1.)Proc name:SELECT Code As Help_Value, Help_Desc FROM PF_LA_COL_4,SELECT Code As Help_Value, Help_Desc FROM PF_LA_COL_3,String.Empty, Key name:LACOL, Paramater:Null",,,
+PFLaMrInput.aspx,LobCP,,pnlLaMr,,Sub-Limit on Assessment Resulting from Condominium Association Deductible,cboPfCondoDeductLimit,,DropDownList,,,,,,,Manual Intervention Required,,,
+PFLaMrInput.aspx,LobCP,,pnlLaMr,,Miscellaneous Real Property (Condos) Limit,txtPfMiscRealLim,PfMiscRealLim,TextBox,,1.) 13,"1.) 0-9,",1.) 1- 9999999999,"1.) If Misc Real coverage requested, enter Misc Real limit.",,,,,
+PFLaMrInput.aspx,LobCP,,pnlLaMr,,Unit Number,txtPfUnitNumber,PfUnitNUmber,TextBox,,1.) 20,1.) 0-9A-Z,,,,,,,

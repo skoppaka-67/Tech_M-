@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    "{{ get_flashed_messages()[0]  }}"
+
+
+       <form action="{{ url_for('edit') }}" method = "POST">
+      <label for="Search">Movie name:&nbsp;&nbsp;</label>
+      <input type="text" id="Search" name="movie_name" required><br><br>
+
+      <input type="submit" value="Search">
+       <br><br><a href = '/logout'>click here to logout </a>
+
+
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<testsuite errors="0" failures="0" name="TestSum-20210820083837" tests="2" time="0.001">
+	<testcase classname="TestSum" name="test_sum" time="0.001"/>
+	<testcase classname="TestSum" name="test_sum_tuple" time="0.000"/>
+	<system-out>
+<![CDATA[]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>

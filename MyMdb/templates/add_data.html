@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyMDB</title>
+</head>
+<body>
+<h1>Add Movie data</h1>
+
+    <form action="{{ url_for('add_data') }}" method = "POST">
+      <label for="Popularity">Popularity:&nbsp;&nbsp;</label>
+      <input type="text" id="Popularity" name="popular" required><br><br>
+
+      <label for="Director">Director:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <input type="text" id="Director" name="director" required><br><br>
+
+      <label for="Genre">Genre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+       <input type="text" id="Genre" name="genre" required><br><br>
+
+      <label for="imdb_score">imdb_score:</label>
+      <input type="text" id="imdb_score" name="imdb_score" required><br><br>
+
+      <label for="name">name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <input type="text" id="name" name="name" required><br><br>
+
+
+      <input type="submit" value="Add Movie">
+
+    </form>
+ <br><br><a href = '/logout'>click here to logout </a>
+</body>
+</html>

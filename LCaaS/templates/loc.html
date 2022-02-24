@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GeoLoc</title>
+</head>
+<body>
+<h3>Find your Lat and LAn</h3>
+   <form action = "/getAddressDetails" method = "post">
+       <p><h4>Address </h4><input type = "text" name = address  required></p>
+<!--       <p><h4>Output format </h4><input type = "text" name = format  required></p>-->
+       <input type="radio" id="json" name="format" value="json">
+            <label for="json">Json</label><br>
+      <input type="radio" id="xml" name="format" value="xml">
+            <label for="xml">XML</label><br>
+
+      <p><input type = submit value = Submit></p>
+
+   </form>
+    &nbsp;
+</body>
+</html>

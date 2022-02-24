@@ -1,0 +1,50 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Sankey Diagram'" [icon]="'fa-bar-chart-o'"></app-page-header>
+</div>
+
+<div class="col-md-12" style="display:flex;">
+    <div class="col-md-2"><label style="font-weight:bold">Application: </label></div>
+    <div class="col-md-3">
+    <select class="form-control" ng-model="cmbAll" id="appln" (change)="applicationTypeOnchange($event)">
+      <option value="">--Select Application--</option>
+      <option *ngFor="let application of applicationTypeList" value={{application}}>
+        {{application}}
+      </option>
+      </select>
+    </div>
+    <div class="col-md-2"><label style="font-weight:bold">Integration: </label></div>
+    <div class="col-md-3">
+        <!-- (change)="programNameOnchange($event)" -->
+      <select class="form-control" id="pgmName" ng-model="pgmName" (change)="integrationOnchange($event)">
+      <option value="">--Select Program--</option>
+      <option value="inbound">Inbound</option>
+      <option value="outbound">Outbound</option>
+    </select></div>
+    <div class="col-md-1">
+      <button class="btn btn-primary" id="submitBtn" (click)="onSubmit()">Submit</button>
+     </div>
+     <div class="col-md-1">
+      <button class="btn btn-primary" (click)="download()">Download</button>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <label id="sankeyMSg"></label>
+    </div>
+  </div>
+<div class="row" style="height: 20px;">
+</div>
+<div class="row">
+  <div class="col-xs-1-5"></div>
+  <div class="col-md-11" id="sanekyChart">
+    <google-chart #chart style="cursor: pointer;"
+      [title]="title"
+      [type]="type"
+      [data]="data"
+      [columnNames]="columnNames"
+      [options]="options"
+      [width]="width"
+      [height]="height">
+    </google-chart>
+  </div>
+</div>

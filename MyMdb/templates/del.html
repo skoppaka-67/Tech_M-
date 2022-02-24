@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Movie Deletion </h1>
+
+     <form action="{{ url_for('movie_delete') }}" method = "POST">
+      <label for="Movie name">Movie name:&nbsp;&nbsp;</label>
+      <input type="text" id="Movie name" name="movie_name" required><br><br>
+      <input type="submit" value="Delete">
+
+    </form>
+<br><br> <a href = '/logout'>click here to logout </a>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'User Guide'" [icon]="'fa-bar-chart-o'"></app-page-header>
+</div>
+<p class="highlight" (click)="openPdf()"> User Guide </p>
+<pdf-viewer [src]="pdfSrc" 
+              [render-text]="true"
+              style="display: block;">
+</pdf-viewer>

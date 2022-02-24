@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<testsuite errors="1" failures="0" name="TestSum-20210820085739" tests="2" time="0.000">
+	<testcase classname="TestSum" name="test_sum" time="0.000"/>
+	<testcase classname="TestSum" name="test_sum_tuple" time="0.000">
+		<error message="5 != 7 : Should be 6" type="AssertionError">
+<![CDATA[Traceback (most recent call last):
+  File "test_1.py", line 11, in test_sum_tuple
+    self.assertEqual(sum((1, 2, 2)), 7, "Should be 6")
+AssertionError: 5 != 7 : Should be 6
+]]>		</error>
+	</testcase>
+	<system-out>
+<![CDATA[]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>

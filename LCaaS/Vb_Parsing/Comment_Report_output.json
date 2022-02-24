@@ -1,0 +1,192 @@
+[
+    {
+        "application": "ANONYMOUS",
+        "component_name": "BookDetails.aspx",
+        "codeString": ""
+    },
+    {
+        "application": "ANONYMOUS",
+        "component_name": "Browsing2.aspx",
+        "codeString": "Update Panel<br>Wrapper<br>Search bar<br>Books display<br>Book top<br>Book middle<br>Book bottom<br>Book bottom (close)<br>Jumbotron (close)<br>Book wrapper (close)<br>container<br>Book display (close)"
+    },
+    {
+        "application": "ANONYMOUS",
+        "component_name": "CheckOut.aspx",
+        "codeString": "divClass<br>Changes"
+    },
+    {
+        "application": "ANONYMOUS",
+        "component_name": "Receipt.aspx",
+        "codeString": ""
+    },
+    {
+        "application": "ANONYMOUS",
+        "component_name": "register.aspx",
+        "codeString": ""
+    },
+    {
+        "application": "ANONYMOUS",
+        "component_name": "Sorry.aspx",
+        "codeString": ""
+    },
+    {
+        "application": "OWNER",
+        "component_name": "OwnerAddBook.aspx",
+        "codeString": "Title<br>Input fields<br>File Upload, Confirm button and Errors Display"
+    },
+    {
+        "application": "OWNER",
+        "component_name": "OwnerUpdateInventory.aspx",
+        "codeString": ""
+    },
+    {
+        "application": "OWNER",
+        "component_name": "OwnerUpdateInventoryNEW.aspx",
+        "codeString": ""
+    },
+    {
+        "application": "USER",
+        "component_name": "About.aspx",
+        "codeString": ""
+    },
+    {
+        "application": "USER",
+        "component_name": "Contact.aspx",
+        "codeString": ""
+    },
+    {
+        "application": "USER",
+        "component_name": "Default.aspx",
+        "codeString": ""
+    },
+    {
+        "application": "ANONYMOUS",
+        "component_name": "BookDetails.aspx.vb",
+        "codeString": "txQty.Controls[0].Dispose();<br>Label1.Text += selectedBook.BookID;"
+    },
+    {
+        "application": "ANONYMOUS",
+        "component_name": "Browsing2.aspx.vb",
+        "codeString": "catid = Convert.ToInt32(CategoryDL.SelectedValue);<br>catid = Convert.ToInt32(CategoryDL.SelectedValue);<br>catid = Convert.ToInt32(CategoryDL.SelectedValue);"
+    },
+    {
+        "application": "ANONYMOUS",
+        "component_name": "CheckOut.aspx.vb",
+        "codeString": ""
+    },
+    {
+        "application": "ANONYMOUS",
+        "component_name": "Receipt.aspx.vb",
+        "codeString": ""
+    },
+    {
+        "application": "ANONYMOUS",
+        "component_name": "register.aspx.vb",
+        "codeString": ""
+    },
+    {
+        "application": "ANONYMOUS",
+        "component_name": "Sorry.aspx.vb",
+        "codeString": ""
+    },
+    {
+        "application": "OWNER",
+        "component_name": "OwnerAddBook.aspx.vb",
+        "codeString": "Only proceed to save in database if book cover image is valid<br>Validate whether file exists<br>Validate file type<br>Validate file size"
+    },
+    {
+        "application": "OWNER",
+        "component_name": "OwnerUpdateInventory.aspx.vb",
+        "codeString": ""
+    },
+    {
+        "application": "OWNER",
+        "component_name": "OwnerUpdateInventoryNEW.aspx.vb",
+        "codeString": ""
+    },
+    {
+        "application": "USER",
+        "component_name": "About.aspx.vb",
+        "codeString": ""
+    },
+    {
+        "application": "USER",
+        "component_name": "Contact.aspx.vb",
+        "codeString": ""
+    },
+    {
+        "application": "USER",
+        "component_name": "Default.aspx.vb",
+        "codeString": ""
+    },
+    {
+        "application": "USER",
+        "component_name": "Book.vb",
+        "codeString": ""
+    },
+    {
+        "application": "USER",
+        "component_name": "BusinessLogic.vb",
+        "codeString": ""
+    },
+    {
+        "application": "USER",
+        "component_name": "Category.vb",
+        "codeString": ""
+    },
+    {
+        "application": "USER",
+        "component_name": "CheckOutBusinessLogic.vb",
+        "codeString": ""
+    },
+    {
+        "application": "MAIN",
+        "component_name": "Startup.vb",
+        "codeString": ""
+    },
+    {
+        "application": "MODELS",
+        "component_name": "IdentityModels.vb",
+        "codeString": "You can add User data for the user by adding more properties to your User class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.<br>Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType<br>Add custom user claims here<br>Used for XSRF when linking external logins"
+    },
+    {
+        "application": "VBCOMPONENT",
+        "component_name": "Book.vb",
+        "codeString": ""
+    },
+    {
+        "application": "VBCOMPONENT",
+        "component_name": "BusinessLogic.vb",
+        "codeString": ""
+    },
+    {
+        "application": "VBCOMPONENT",
+        "component_name": "Category.vb",
+        "codeString": ""
+    },
+    {
+        "application": "VBCOMPONENT",
+        "component_name": "CheckOutBusinessLogic.vb",
+        "codeString": ""
+    },
+    {
+        "application": "VBCOMPONENT",
+        "component_name": "Order.vb",
+        "codeString": ""
+    },
+    {
+        "application": "VBCOMPONENT",
+        "component_name": "OrderDetail.vb",
+        "codeString": ""
+    },
+    {
+        "application": "VBCOMPONENT",
+        "component_name": "PopulateDataObject.vb",
+        "codeString": ""
+    },
+    {
+        "application": "VBCOMPONENT",
+        "component_name": "SearchBusinessLogic.vb",
+        "codeString": "command.Parameters.AddWithValue(\"@title\", \"%\" + title + \"%\");"
+    }
+]

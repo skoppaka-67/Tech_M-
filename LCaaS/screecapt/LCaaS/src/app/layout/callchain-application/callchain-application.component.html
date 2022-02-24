@@ -1,0 +1,109 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Call Chain Diagram'" [icon]="'fa-table'"></app-page-header>
+</div>
+  <div class="row">
+    <div class="col-md-12" style="display:flex;">
+        <div class="col-md-2"><label style="font-weight:bold">Application: </label></div>
+        <div class="col-md-3">
+        <select class="form-control" ng-model="cmbAll" id="appln" (change)="applicationTypeOnchange($event)">
+          <option value="">--Select Application--</option>
+          <option *ngFor="let application of applicationTypeList" value={{application}}>
+            {{application}}
+          </option>
+          </select>
+        </div>
+    <div class="col-md-2"><label style="font-weight:bold">Component Type: </label></div>
+    <div class="col-md-3">
+    <select class="form-control" ng-model="cmp" id="cmp" (change)="compTypeOnchange($event)">
+        <option value="">--Select Type--</option>
+        <option *ngFor="let componentType of componentTypeList" value={{componentType}}>
+            {{componentType}}
+        </option>
+      </select>
+    </div>
+  </div>
+  </div>
+  <br>
+  <div class="row">
+  <div class="col-md-12" style="display:flex;">
+      <div class="col-md-2"><label style="font-weight:bold">Component Name: </label></div>
+      <div class="col-md-3">
+        <select class="form-control" id="cmpName" ng-model="cmpName" (change)="compNameOnchange($event)">
+          <option value="">--Select Name--</option>
+          <option *ngFor="let component of componentList" value={{component}}>
+              {{component}}
+          </option>
+      </select></div>
+      <div class="col-md-1"><label style="font-weight:bold">Level: </label></div>
+      <div class="col-md-3">
+        <select class="form-control" ng-model="filter" id="filter" (change)="levelOnchange($event)">
+          <option value="">--Select Level--</option>
+          <option value="parent">Backward Call Chain</option>
+          <option value="child">Forward Call Chain</option>
+        </select>
+      </div>
+      <div class="col-md-1">
+        <button class="btn btn-primary" id="submitBtn" (click)="onSubmit()">Submit</button>
+      </div>
+      <div class="col-md-1">
+        <button class="btn btn-primary" id="downloadBtn" (click)="printData()">Download</button>
+      </div>
+      <div class="col-md-3">
+        <label id="spiderErrMsg"></label>
+      </div>
+  </div>
+  </div> <!--  [layout]="'dagre'" -->
+<div id="spiderDiag">
+       <ngx-graph
+        id="spiderChart"
+        [links]="hierarchialGraph.links"
+        [nodes]="hierarchialGraph.nodes"
+        [label]="hierarchialGraph.label"
+        [clusters]="clusters"
+        [layout]="'colaForceDirected'"
+        [view]="view"
+        [curve]="curve"
+      >
+      <ng-template #defsTemplate>
+        <svg:marker id="arrow" viewBox="0 -5 10 10" refX="8" refY="0" markerWidth="4" markerHeight="4" orient="auto">
+          <svg:path d="M0,-5L10,0L0,5" class="arrow-head" />
+        </svg:marker>
+      </ng-template>
+
+        <ng-template #clusterTemplate let-cluster>
+          <svg:g class="node cluster">
+            <svg:rect rx="5" ry="5" [attr.width]="cluster.dimension.width" [attr.height]="cluster.dimension.height" [attr.fill]="cluster.data.color" />
+
+          </svg:g>
+        </ng-template>
+
+        <ng-template #nodeTemplate let-node>
+          <svg:g class="node"
+  ngx-tooltip
+  [tooltipPlacement]="'top'"
+  [tooltipType]="'tooltip'"
+  >
+            <svg:rect [attr.width]="node.dimension.width" [attr.height]="node.dimension.height" [attr.fill]="node.data.color" />
+            <svg:text alignment-baseline="central" [attr.x]="10" [attr.y]="node.dimension.height / 2" >{{node.label}}</svg:text>
+          </svg:g>
+        </ng-template>
+      
+        <ng-template #linkTemplate let-link>
+            <svg:g class="edge">
+              <svg:path
+                class="line"
+                stroke-width="2"
+                marker-end="url(#arrow)" >
+              </svg:path>
+              <svg:text
+                class="edge-label"
+                text-anchor="middle">
+              <textPath style="fill: #666; color: red;" [attr.href]="'#' + link.id" startOffset="70%">
+                {{link.label}}
+              </textPath>
+            </svg:text>
+            </svg:g>
+          </ng-template>
+      </ngx-graph>
+
+</div>

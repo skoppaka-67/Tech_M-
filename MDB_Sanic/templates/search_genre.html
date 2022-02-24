@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Search with genre </h1>
+
+     <form action="{{ url_for('search_by_genre') }}" method = "POST">
+      <label for="Search">Genre name:&nbsp;&nbsp;</label>
+      <input type="text" id="Search" name="movie_name" required><br><br>
+
+      <input type="submit" value="Search">
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+	"base_location" 	: "D:\\Recorded_Scenarios",
+	"_comment1"		: "Base Location is where the recordings will be saved. Please use backslashes only, Do not add backslashes at ending",
+	"ui_location"   	: "D:\\WORK\\apache-tomcat-8.5.57\\webapps\\ITAPV2",
+	"_comment2"		: "UI Location is where the UI is running, The base of angular UI of iTAP. Please use backslashes only, Do not add backslashes at ending",
+	"delay"			: 2000,
+	"sleep_delay"    : 3000,
+	"_comment3"		: "Delay between pages",
+	"minimum_delay"		: 2000,
+	"_comment4"		: "Minimum Delay between each browser action",
+	"download" : "C:\\Users\\KS00561356\\Downloads\\new_file.txt",
+	"_comment5"		: "File download location",
+	"recorder_path" : "D:\\itap\\Robocorp-Recorder-master",
+	"chrome_driver_path": "C:\\Webdriver\\chromedriver.exe"
+}

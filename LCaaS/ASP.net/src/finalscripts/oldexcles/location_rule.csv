@@ -1,0 +1,35 @@
+rule_id,file_name,function_name,field_name,rule_statement,Rule_Relation,rule_description,rule_type,lob
+rule-1,PFSpoilInput.aspx,setchkPfSplgPrice,chkPfSplgPrice,"            If _oLobBus.Validate(""PfSplgPrice"")  Then
+                 chkPfSplgPrice.Checked = True
+             End If
+",rule-1,,function_type_rule,
+,PFSpoilInput.aspx,,chkPfSplgPrice,setchkPfSplgPrice(),rule-1,,,
+,PFSpoilInput.aspx,,chkPfSplgPrice,SetCoverageInfo(),rule-1,,,
+External-rule-1,PFSpoilInput.aspx,Validate,chkPfSplgPrice,"If InStr(1, ""*1*2*3*"", ""*"" & oLobLoc.Input(""PfSplgClass"").Value & ""*"") = 0 Then oValidationResults.Add(""Invalid class"", ""classCodeLoc"") End If",,,External_function_rule,
+External-rule-2,PFSpoilInput.aspx,Validate,chkPfSplgPrice,"If InStr(1, ""*1*2*3*"", ""*"" & oLobLoc.Input(""PfSplgType"").Value & ""*"") = 0 Then oValidationResults.Add(""Invalid coverage type"", ""cboPfSplgType"") End If",,,External_function_rule,
+rule-2,PFSpoilInput.aspx,SaveFormData,chkPfSplgPrice,"            If chkPfSplgPrice.Checked = True Then
+                 _oLobLoc.Input(""PfSplgPrice"").Value = ""Y""
+             Else
+                 _oLobLoc.Input(""PfSplgPrice"").Value = """"
+             End If
+",rule-2,,direct_rule,
+rule-3,PFSpoilInput.aspx,setchkPfSplgRefMaint,chkPfSplgRefMaint,"            If _oLobLoc.Input(""PfSplgRefMaint"").Value = ""Y"" Then
+                 chkPfSplgRefMaint.Checked = True
+             End If
+",rule-3,,direct_rule,
+,PFSpoilInput.aspx,,chkPfSplgRefMaint,setchkPfSplgRefMaint(),rule-3,,,
+,PFSpoilInput.aspx,,chkPfSplgRefMaint,SetCoverageInfo(),rule-3,,,
+rule-4,PFSpoilInput.aspx,SaveFormData,chkPfSplgRefMaint,"            If chkPfSplgRefMaint.Checked = True Then
+                 _oLobLoc.Input(""PfSplgRefMaint"").Value = ""Y""
+             Else
+                 _oLobLoc.Input(""PfSplgRefMaint"").Value = """"
+             End If
+",rule-4,,direct_rule,
+rule-5,PFSpoilInput.aspx,settxtPfSplgCopFac,txtPfSplgCopFac,"            If txtPfSplgCopFac.Text.Trim() = """" Then
+                 _oLobLoc.Input(""PfSplgCopFac"").Value = ""1.00""
+             Else
+                 _oLobLoc.Input(""PfSplgCopFac"").Value = txtPfSplgCopFac.Text.Trim()
+             End If
+",rule-5,,direct_rule,
+,PFSpoilInput.aspx,,txtPfSplgCopFac,settxtPfSplgCopFac(),rule-5,,,
+,PFSpoilInput.aspx,,txtPfSplgCopFac,SetCoverageInfo(),rule-5,,,

@@ -1,0 +1,76 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Register User'" [icon]="'fa fa-user-plus'"></app-page-header>
+</div>
+<div>Not found!</div>
+<!-- <div>
+  <form id="registerForm" autocomplete="false">
+    <div class="col-md-12" style="display:flex;">
+        <div class="col-md-2">
+          <label style="font-weight:bold">  Full Name: </label>
+        </div>
+        <div class="col-md-4">
+          <input type="text" id="fullName" class="form-control input-underline input-lg" placeholder="{{ 'Full Name' }}" />
+          
+        </div>
+    </div> 
+    <br>
+    <div class="col-md-12" style="display:flex;">
+        <div class="col-md-2">
+          <label style="font-weight:bold">  User ID: </label>
+        </div>
+        <div class="col-md-4">
+          <input type="text" id="userId" autocomplete="username" class="form-control input-underline input-lg" placeholder="{{ 'User Name' }}" />
+        </div>
+    </div>
+    <br>
+    <div class="col-md-12" style="display: flex;">
+        <div class="col-md-2">
+          <label style="font-weight:bold">  Password: </label>
+        </div>
+        <div class="col-md-4">
+          <input type="password" id="password" (blur)="checkLength($event.target.value)" autocomplete="new-password" class="form-control input-underline input-lg" placeholder="{{ 'Password' }}" />
+        </div>
+    </div>
+    <br>
+    <div class="col-md-12" style="display: flex;">
+        <div class="col-md-2">
+          <label style="font-weight:bold">  Confirm Password: </label>
+        </div>
+        <div class="col-md-4">
+          <input type="password" id="repeatPassword" (blur)="checkPwdMatch($event.target.value)" autocomplete="false" class="form-control input-underline input-lg" placeholder="{{ 'Repeat Password' }}" />
+        </div>
+    </div>
+    <br> -->
+    <!-- <div class="col-md-12" style="display: flex;">
+        <div class="col-md-2">
+          <label style="font-weight:bold">  User Role: </label>
+        </div>
+    <div class="col-md-4">
+            <select class="form-control" id="selectUserRole" (change)="onChange($event.target.value)">
+                <option value="">--Select User Role--</option>
+                <option value="superUser">Super User</option> 
+                <option value="geUser">GE User</option>
+                <option value="as400User">AS400 User</option>
+                <option value="navistarUser">Navistar User</option>
+                <option value="mazdaUser">Mazda User</option>
+                <option *ngFor="let role of userRoles" value={{role}}>
+                    {{role}}
+                </option>
+              </select>
+        </div> 
+    </div> -->
+    <!-- <br>
+    <div class="col-md-12" style="display: flex;">
+        <div class="col-md-2">
+            <label id="formErrorMsg"></label>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary" (click)="onSubmit()">Create User</button>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary" (click)="resetFields()">Reset Form</button>
+        </div>
+    </div>
+  </form>
+</div> -->
+

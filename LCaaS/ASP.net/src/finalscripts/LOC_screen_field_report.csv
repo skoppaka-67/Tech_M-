@@ -1,0 +1,9 @@
+filename,lob,panel_id,SectionID,SectionName,CLASLabel,ScreenField,CLASField,Type,Required,Length,Allowkeys,Min-Max,Tooltip,Enable,DropdownValue,StoredValue,ErrorMessage,Comments
+PFSpoilInput.aspx,LobCP,,,,,lblLocNumBuildingInfo,,label,,,,,,,,,,
+PFSpoilInput.aspx,LobCP,,,,,lblLocAddress,,label,,,,,,,,,,
+PFSpoilInput.aspx,LobCP,,pnlPFSpoil,,Limit,txtPfSplgLim,PfSplgLim,TextBox,1.) True,1.) 7,,1.) 1- 9999999,1.) Enter limit,,,,,
+PFSpoilInput.aspx,LobCP,,pnlPFSpoil,,Coverage Type,cboPfSplgType,Check in the Javascript file,ComboBox,1.) True,,,,1.) Enter coverage type,,"1.)Proc name:SELECT Code As Help_Value, Help_Desc FROM PF_SpoilCov, Key name:SPLGTYPE, Paramater:Null",,,
+PFSpoilInput.aspx,LobCP,,pnlPFSpoil,,Ref Maint Agrmt,chkPfSplgRefMaint,PfSplgRefMaint,CheckBox,,,,,1.) Check box if refrigeration maintenance agreement applies,,,,,
+PFSpoilInput.aspx,LobCP,,pnlPFSpoil,,Selling Price,chkPfSplgPrice,PfSplgPrice,CheckBox,,,,,"1.) Check box if selling price applies
+2.) Check box if selling price applies",,,,,
+PFSpoilInput.aspx,LobCP,,pnlPFSpoil,,Cop Factor,txtPfSplgCopFac,PfSplgCopFac,TextBox,,,,,,,,,,

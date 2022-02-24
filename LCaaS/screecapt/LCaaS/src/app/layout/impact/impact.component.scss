@@ -1,0 +1,20 @@
+.highlight {
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
+}
+
+#compName {
+    font-weight:bold
+}
+.modal-body {
+    max-height: 80vh; /* max 80% of the viewport height */
+    overflow-y: auto;
+}
+.comment {
+    color: green;
+}
+
+.table-cont{
+    overflow: auto;
+}

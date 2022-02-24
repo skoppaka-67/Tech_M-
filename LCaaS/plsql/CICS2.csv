@@ -1,0 +1,215 @@
+s_no,procedure_name,function_name,trigger_name,fragment_Id,para_name,source_statements,package_name,rule_category,parent_rule_id,business_documentation,_id
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-1,,"CREATE OR REPLACE PACKAGE BODY APPS./*AppDB: 9632762*/         ""XXCTS_PR2S_ITEM_ORG_ASGN_PKG""  <br>",XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac38c1
+,log_flow,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-2,,PROCEDURE log_flow (p_log_message VARCHAR2) <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Action,,,60c8337fd861538c9cac38c2
+,log_flow,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-3,,BEGIN,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac38c3
+,log_flow,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-4,,"fnd_file.put_line (fnd_file.LOG, p_log_message);",XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac38c4
+,log_flow,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-5,,DBMS_OUTPUT.put_line (p_log_message);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac38c5
+,log_flow,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-6,,END log_flow;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac38c6
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-7,,PROCEDURE insert_items_to_rec_org ( <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Action,,,60c8337fd861538c9cac38c7
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-8,,BEGIN,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac38c8
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-9,,log_flow ('Begin');,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac38c9
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-10,,<<label1>> <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac38ca
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-11,,BEGIN,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac38cb
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-12,,"SELECT frt.application_id, frt.responsibility_id <br>            INTO l_resp_appl_id, l_resp_id <br>            FROM apps.fnd_responsibility_tl frt <br>           WHERE frt.responsibility_name = l_resp_name;",XXCTS_PR2S_ITEM_ORG_ASGN_PKG,CRUD Fragment,,,60c8337fd861538c9cac38cc
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-13,,EXCEPTION <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac38cd
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-14,,WHEN NO_DATA_FOUND <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac38ce
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-15,,THEN,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Rule,,,60c8337fd861538c9cac38cf
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-16,,log_flow ('Resp ID Does not exists for: ' || l_resp_name);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac38d0
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-17,,RAISE l_validation_exception;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac38d1
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-18,,WHEN OTHERS <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac38d2
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-19,,THEN,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Rule,,,60c8337fd861538c9cac38d3
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-20,,log_flow ( <br>                   'Error While Deriving Resp ID and Resp Appl ID for: ' <br>                || l_resp_name);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac38d4
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-21,,RAISE l_validation_exception;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac38d5
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-22,,END label1;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac38d6
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-23,,BEGIN <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac38d7
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-24,,"SELECT organization_code, organization_id <br>            INTO l_master_org_code, l_master_org_id <br>            FROM mtl_parameters <br>           WHERE organization_code = <br>                    fnd_profile.VALUE ('XXCTS_INV_MASTER_ORG_CODE');",XXCTS_PR2S_ITEM_ORG_ASGN_PKG,CRUD Fragment,,,60c8337fd861538c9cac38d8
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-25,,EXCEPTION <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac38d9
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-26,,WHEN NO_DATA_FOUND <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac38da
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-27,,THEN,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Rule,,,60c8337fd861538c9cac38db
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-28,,log_flow ('Resp ID Does not exists for: ' || l_resp_name);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac38dc
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-29,,RAISE l_validation_exception;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac38dd
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-30,,WHEN OTHERS <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac38de
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-31,,THEN,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Rule,,,60c8337fd861538c9cac38df
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-32,,log_flow ( <br>                   'Error While Deriving Resp ID and Resp Appl ID for: ' <br>                || l_resp_name);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac38e0
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-33,,RAISE l_validation_exception;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac38e1
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-34,,END;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac38e2
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-35,,"fnd_global.apps_initialize (user_id        => g_user_id, <br>                                   resp_id        => l_resp_id, <br>                                   resp_appl_id   => l_resp_appl_id);",XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac38e3
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-36,,"fnd_file.put_line (fnd_file.LOG, 'apps initialized ');",XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac38e4
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-37,,FOR cr_itm IN get_stg_item (l_master_org_id) <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Action,,,60c8337fd861538c9cac38e5
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-38,,LOOP,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Action,,,60c8337fd861538c9cac38e6
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-39,,"fnd_file.put_line (fnd_file.LOG, 'item :: ' || cr_itm.segment1);",XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac38e7
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-40,,FOR c_idx IN get_org_details <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Action,,,60c8337fd861538c9cac38e8
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-41,,LOOP,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Action,,,60c8337fd861538c9cac38e9
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-42,,"fnd_file.put_line (fnd_file.LOG, <br>                                'Org Id  :: ' || c_idx.organization_id);",XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac38ea
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-43,,l_item_tt (i_num).transaction_type := 'CREATE'; -- ? Replace this with ?UPDATE? for update transaction.,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac38eb
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-44,,l_item_tt (i_num).segment1 := cr_itm.segment1;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac38ec
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-45,,l_item_tt (i_num).inventory_item_id := cr_itm.inventory_item_id;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac38ed
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-46,,l_item_tt (i_num).organization_id := c_idx.organization_id; --cr_itm.organization_id;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac38ee
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-47,,l_item_tt (i_num).description := cr_itm.description;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac38ef
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-48,,l_item_tt (i_num).primary_uom_code := cr_itm.primary_uom_code;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac38f0
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-49,,l_item_tt (i_num).inventory_item_status_code := <br>                cr_itm.inventory_item_status_code;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac38f1
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-50,,l_item_tt (i_num).min_minmax_quantity := <br>                cr_itm.min_minmax_quantity;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac38f2
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-51,,l_item_tt (i_num).max_minmax_quantity := <br>                cr_itm.max_minmax_quantity;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac38f3
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-52,,l_item_tt (i_num).minimum_order_quantity := <br>                cr_itm.minimum_order_quantity;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac38f4
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-53,,l_item_tt (i_num).maximum_order_quantity := <br>                cr_itm.maximum_order_quantity;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac38f5
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-54,,l_item_tt (i_num).fixed_lot_multiplier := <br>                cr_itm.fixed_lot_multiplier;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac38f6
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-55,,l_item_tt (i_num).source_type := cr_itm.source_type;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac38f7
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-56,,l_item_tt (i_num).source_subinventory := <br>                cr_itm.source_subinventory;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac38f8
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-57,,l_item_tt (i_num).full_lead_time := cr_itm.full_lead_time;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac38f9
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-58,,l_item_tt (i_num).weight_uom_code := cr_itm.weight_uom_code;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac38fa
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-59,,l_item_tt (i_num).unit_weight := cr_itm.unit_weight;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac38fb
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-60,,l_item_tt (i_num).volume_uom_code := cr_itm.volume_uom_code;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac38fc
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-61,,l_item_tt (i_num).unit_volume := cr_itm.unit_volume;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac38fd
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-62,,l_item_tt (i_num).dimension_uom_code := cr_itm.dimension_uom_code;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac38fe
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-63,,l_item_tt (i_num).unit_length := cr_itm.unit_length;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac38ff
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-64,,l_item_tt (i_num).unit_width := cr_itm.unit_width;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3900
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-65,,l_item_tt (i_num).unit_height := cr_itm.unit_height;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3901
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-66,,l_item_tt (i_num).buyer_id := NULL;          --cr_itm.buyer_name);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3902
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-67,,l_item_tt (i_num).list_price_per_unit := <br>                cr_itm.list_price_per_unit;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3903
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-68,,l_item_tt (i_num).hazard_class_id := cr_itm.hazard_class_id;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3904
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-69,,l_item_tt (i_num).attribute1 := cr_itm.attribute1;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3905
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-70,,l_item_tt (i_num).attribute2 := cr_itm.attribute2;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3906
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-71,,l_item_tt (i_num).attribute3 := cr_itm.attribute3;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3907
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-72,,l_item_tt (i_num).attribute4 := cr_itm.attribute4;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3908
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-73,,l_item_tt (i_num).attribute5 := cr_itm.attribute5;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3909
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-74,,l_item_tt (i_num).attribute6 := cr_itm.attribute6;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac390a
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-75,,l_item_tt (i_num).attribute7 := cr_itm.attribute7;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac390b
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-76,,l_item_tt (i_num).attribute8 := cr_itm.attribute8;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac390c
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-77,,l_item_tt (i_num).attribute13 := cr_itm.attribute13;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac390d
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-78,,l_item_tt (i_num).attribute14 := cr_itm.attribute14;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac390e
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-79,,i_num := i_num + 1;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac390f
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-80,,END LOOP;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac3910
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-81,,log_flow ('Calling ego_item_pub.process_items');,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac3911
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-82,,"ego_item_pub.process_items (p_api_version     => 1.0, <br>                                      p_init_msg_list   => fnd_api.g_true, <br>                                      p_commit          => fnd_api.g_true, <br>                                      p_item_tbl        => l_item_tt, <br>                                      x_item_tbl        => x_items_tt, <br>                                      x_return_status   => x_return_status, <br>                                      x_msg_count       => x_msg_count);",XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac3912
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-83,,log_flow ('x_return_status : ' || x_return_status);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac3913
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-84,,IF (x_return_status = fnd_api.g_ret_sts_success) <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Rule,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-84,,60c8337fd861538c9cac3914
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-85,,THEN,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Rule,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-84,,60c8337fd861538c9cac3915
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-86,,FOR i IN 1 .. x_items_tt.COUNT <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-84,,60c8337fd861538c9cac3916
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-87,,LOOP,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-84,,60c8337fd861538c9cac3917
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-88,,log_flow ( <br>                   'Inventory Item Id : ' || x_items_tt (i).inventory_item_id);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-84,,60c8337fd861538c9cac3918
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-89,,x_inventory_item_id := x_items_tt (i).inventory_item_id;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-84,,60c8337fd861538c9cac3919
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-90,,log_flow ( <br>                   '  Organization Id :' || x_items_tt (i).organization_id);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-84,,60c8337fd861538c9cac391a
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-91,,x_organization_id := x_items_tt (i).organization_id;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-84,,60c8337fd861538c9cac391b
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-92,,END LOOP;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-84,,60c8337fd861538c9cac391c
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-93,,COMMIT;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-84,,60c8337fd861538c9cac391d
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-94,,ELSE                  --? ITEM MASTER FAILED Process out the messages,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Connected Business Rule,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-84,,60c8337fd861538c9cac391e
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-95,,error_handler.get_message_list (x_message_list => x_message_list);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-84,,60c8337fd861538c9cac391f
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-96,,FOR i IN 1 .. x_message_list.COUNT <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-84,,60c8337fd861538c9cac3920
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-97,,LOOP,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-84,,60c8337fd861538c9cac3921
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-98,,l_msg := l_msg || '; ' || x_message_list (i).MESSAGE_TEXT;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-84,,60c8337fd861538c9cac3922
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-99,,END LOOP;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-84,,60c8337fd861538c9cac3923
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-100,,log_flow ('l_msg : ' || l_msg);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-84,,60c8337fd861538c9cac3924
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-101,,END IF;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Rule,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-84,,60c8337fd861538c9cac3925
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-102,,END LOOP;                                             --? Main Item loop,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac3926
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-103,,EXCEPTION <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac3927
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-104,,WHEN l_validation_exception <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac3928
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-105,,THEN,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Rule,,,60c8337fd861538c9cac3929
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-106,,log_flow ('Validation Error: ' || SQLERRM);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac392a
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-107,,WHEN OTHERS <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac392b
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-108,,THEN,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Rule,,,60c8337fd861538c9cac392c
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-109,,log_flow ('Others Error in Item Load: ' || SQLERRM);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac392d
+,insert_items_to_rec_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-110,,END insert_items_to_rec_org;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac392e
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-111,,PROCEDURE insert_items_to_cost_org ( <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Action,,,60c8337fd861538c9cac392f
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-112,,BEGIN,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac3930
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-113,,log_flow ('Begin');,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac3931
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-114,,<<label1>> <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac3932
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-115,,BEGIN,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac3933
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-116,,"SELECT frt.application_id, frt.responsibility_id <br>            INTO l_resp_appl_id, l_resp_id <br>            FROM apps.fnd_responsibility_tl frt <br>           WHERE frt.responsibility_name = l_resp_name;",XXCTS_PR2S_ITEM_ORG_ASGN_PKG,CRUD Fragment,,,60c8337fd861538c9cac3934
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-117,,EXCEPTION <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac3935
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-118,,WHEN NO_DATA_FOUND <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac3936
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-119,,THEN,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Rule,,,60c8337fd861538c9cac3937
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-120,,log_flow ('Resp ID Does not exists for: ' || l_resp_name);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac3938
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-121,,RAISE l_validation_exception;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac3939
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-122,,WHEN OTHERS <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac393a
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-123,,THEN,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Rule,,,60c8337fd861538c9cac393b
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-124,,log_flow ( <br>                   'Error While Deriving Resp ID and Resp Appl ID for: ' <br>                || l_resp_name);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac393c
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-125,,RAISE l_validation_exception;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac393d
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-126,,END label1;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac393e
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-127,,BEGIN <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac393f
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-128,,"SELECT organization_code, organization_id <br>            INTO l_master_org_code, l_master_org_id <br>            FROM mtl_parameters <br>           WHERE organization_code = <br>                    fnd_profile.VALUE ('XXCTS_INV_MASTER_ORG_CODE');",XXCTS_PR2S_ITEM_ORG_ASGN_PKG,CRUD Fragment,,,60c8337fd861538c9cac3940
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-129,,EXCEPTION <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac3941
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-130,,WHEN NO_DATA_FOUND <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac3942
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-131,,THEN,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Rule,,,60c8337fd861538c9cac3943
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-132,,log_flow ('Resp ID Does not exists for: ' || l_resp_name);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac3944
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-133,,RAISE l_validation_exception;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac3945
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-134,,WHEN OTHERS <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac3946
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-135,,THEN,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Rule,,,60c8337fd861538c9cac3947
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-136,,log_flow ( <br>                   'Error While Deriving Resp ID and Resp Appl ID for: ' <br>                || l_resp_name);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac3948
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-137,,RAISE l_validation_exception;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac3949
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-138,,END;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac394a
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-139,,"fnd_global.apps_initialize (user_id        => g_user_id, <br>                                   resp_id        => l_resp_id, <br>                                   resp_appl_id   => l_resp_appl_id);",XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac394b
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-140,,log_flow ('apps initialized ');,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac394c
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-141,,FOR cr_itm IN get_stg_item (l_master_org_id) <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Action,,,60c8337fd861538c9cac394d
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-142,,LOOP,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Action,,,60c8337fd861538c9cac394e
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-143,,log_flow ('item :: ' || cr_itm.segment1);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac394f
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-144,,FOR c_idx IN get_cost_org <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Action,,,60c8337fd861538c9cac3950
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-145,,LOOP,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Action,,,60c8337fd861538c9cac3951
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-146,,log_flow ('Cost Org Id :: ' || c_idx.cost_organization_id);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac3952
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-147,,l_item_tt (i_num).transaction_type := 'CREATE'; -- ? Replace this with ?UPDATE? for update transaction.,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3953
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-148,,l_item_tt (i_num).segment1 := cr_itm.segment1;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3954
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-149,,l_item_tt (i_num).inventory_item_id := cr_itm.inventory_item_id;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3955
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-150,,l_item_tt (i_num).organization_id := c_idx.cost_organization_id; --cr_itm.organization_id;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3956
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-151,,l_item_tt (i_num).description := cr_itm.description;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3957
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-152,,l_item_tt (i_num).primary_uom_code := cr_itm.primary_uom_code;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3958
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-153,,l_item_tt (i_num).inventory_item_status_code := <br>                cr_itm.inventory_item_status_code;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3959
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-154,,l_item_tt (i_num).min_minmax_quantity := <br>                cr_itm.min_minmax_quantity;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac395a
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-155,,l_item_tt (i_num).max_minmax_quantity := <br>                cr_itm.max_minmax_quantity;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac395b
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-156,,l_item_tt (i_num).minimum_order_quantity := <br>                cr_itm.minimum_order_quantity;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac395c
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-157,,l_item_tt (i_num).maximum_order_quantity := <br>                cr_itm.maximum_order_quantity;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac395d
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-158,,l_item_tt (i_num).fixed_lot_multiplier := <br>                cr_itm.fixed_lot_multiplier;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac395e
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-159,,l_item_tt (i_num).source_type := cr_itm.source_type;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac395f
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-160,,l_item_tt (i_num).source_subinventory := <br>                cr_itm.source_subinventory;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3960
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-161,,l_item_tt (i_num).full_lead_time := cr_itm.full_lead_time;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3961
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-162,,l_item_tt (i_num).weight_uom_code := cr_itm.weight_uom_code;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3962
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-163,,l_item_tt (i_num).unit_weight := cr_itm.unit_weight;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3963
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-164,,l_item_tt (i_num).volume_uom_code := cr_itm.volume_uom_code;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3964
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-165,,l_item_tt (i_num).unit_volume := cr_itm.unit_volume;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3965
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-166,,l_item_tt (i_num).dimension_uom_code := cr_itm.dimension_uom_code;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3966
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-167,,l_item_tt (i_num).unit_length := cr_itm.unit_length;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3967
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-168,,l_item_tt (i_num).unit_width := cr_itm.unit_width;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3968
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-169,,l_item_tt (i_num).unit_height := cr_itm.unit_height;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3969
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-170,,l_item_tt (i_num).buyer_id := NULL;          --cr_itm.buyer_name);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac396a
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-171,,l_item_tt (i_num).list_price_per_unit := <br>                cr_itm.list_price_per_unit;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac396b
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-172,,l_item_tt (i_num).hazard_class_id := cr_itm.hazard_class_id;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac396c
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-173,,l_item_tt (i_num).attribute1 := cr_itm.attribute1;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac396d
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-174,,l_item_tt (i_num).attribute2 := cr_itm.attribute2;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac396e
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-175,,l_item_tt (i_num).attribute3 := cr_itm.attribute3;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac396f
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-176,,l_item_tt (i_num).attribute4 := cr_itm.attribute4;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3970
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-177,,l_item_tt (i_num).attribute5 := cr_itm.attribute5;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3971
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-178,,l_item_tt (i_num).attribute6 := cr_itm.attribute6;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3972
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-179,,l_item_tt (i_num).attribute7 := cr_itm.attribute7;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3973
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-180,,l_item_tt (i_num).attribute8 := cr_itm.attribute8;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3974
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-181,,l_item_tt (i_num).attribute13 := cr_itm.attribute13;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3975
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-182,,l_item_tt (i_num).attribute14 := cr_itm.attribute14;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3976
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-183,,i_num := i_num + 1;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,,,60c8337fd861538c9cac3977
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-184,,END LOOP;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac3978
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-185,,log_flow ('Calling ego_item_pub.process_items');,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac3979
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-186,,"ego_item_pub.process_items (p_api_version     => 1.0, <br>                                      p_init_msg_list   => fnd_api.g_true, <br>                                      p_commit          => fnd_api.g_true, <br>                                      p_item_tbl        => l_item_tt, <br>                                      x_item_tbl        => x_items_tt, <br>                                      x_return_status   => x_return_status, <br>                                      x_msg_count       => x_msg_count);",XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac397a
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-187,,log_flow ('x_return_status : ' || x_return_status);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac397b
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-188,,IF (x_return_status = fnd_api.g_ret_sts_success) <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Rule,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-188,,60c8337fd861538c9cac397c
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-189,,THEN,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Rule,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-188,,60c8337fd861538c9cac397d
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-190,,FOR i IN 1 .. x_items_tt.COUNT <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-188,,60c8337fd861538c9cac397e
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-191,,LOOP,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-188,,60c8337fd861538c9cac397f
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-192,,log_flow ( <br>                   'Inventory Item Id : ' || x_items_tt (i).inventory_item_id);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-188,,60c8337fd861538c9cac3980
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-193,,x_inventory_item_id := x_items_tt (i).inventory_item_id;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-188,,60c8337fd861538c9cac3981
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-194,,log_flow ( <br>                   '  Organization Id :' || x_items_tt (i).organization_id);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-188,,60c8337fd861538c9cac3982
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-195,,x_organization_id := x_items_tt (i).organization_id;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-188,,60c8337fd861538c9cac3983
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-196,,END LOOP;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-188,,60c8337fd861538c9cac3984
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-197,,COMMIT;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-188,,60c8337fd861538c9cac3985
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-198,,ELSE                  --? ITEM MASTER FAILED Process out the messages,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Connected Business Rule,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-188,,60c8337fd861538c9cac3986
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-199,,error_handler.get_message_list (x_message_list => x_message_list);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-188,,60c8337fd861538c9cac3987
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-200,,FOR i IN 1 .. x_message_list.COUNT <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-188,,60c8337fd861538c9cac3988
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-201,,LOOP,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-188,,60c8337fd861538c9cac3989
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-202,,l_msg := l_msg || '; ' || x_message_list (i).MESSAGE_TEXT;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-188,,60c8337fd861538c9cac398a
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-203,,END LOOP;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-188,,60c8337fd861538c9cac398b
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-204,,log_flow ('l_msg : ' || l_msg);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-188,,60c8337fd861538c9cac398c
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-205,,END IF;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Rule,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-188,,60c8337fd861538c9cac398d
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-206,,END LOOP;                                             --? Main Item loop,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac398e
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-207,,EXCEPTION <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac398f
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-208,,WHEN l_validation_exception <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac3990
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-209,,THEN,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Rule,,,60c8337fd861538c9cac3991
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-210,,log_flow ('Validation Error: ' || SQLERRM);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac3992
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-211,,WHEN OTHERS <br>,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac3993
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-212,,THEN,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Business Rule,,,60c8337fd861538c9cac3994
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-213,,log_flow ('Others Error in Item Load: ' || SQLERRM);,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Other Action,,,60c8337fd861538c9cac3995
+,insert_items_to_cost_org,,,XXCTS_PR2S_ITEM_ORG_ASGN_PKG-214,,END insert_items_to_cost_org;,XXCTS_PR2S_ITEM_ORG_ASGN_PKG,Technical Rule,,,60c8337fd861538c9cac3996

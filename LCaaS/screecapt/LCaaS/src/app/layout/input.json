@@ -1,0 +1,15 @@
+[{
+    "appName" : "",
+    "compName" : "AP540P00",
+    "compType": "COBOL",
+    "spiderFilter": "All",
+    "callChainLevel": "child",
+    "processFlowExtCall": "no",
+    "sankey": "inbound",
+    "ruleCategory": "Business Action",
+    "breThreeSearchFilter": "",
+    "cicsValidationMapName": "ACRV880.bms",
+    "cicsXrefSearchFilter": "",
+    "variableSearchFiler": "",
+    "event": ""
+}]

@@ -1,0 +1,307 @@
+rule_id,file_name,lob,function_name,field_name,rule_statement,rule_description,rule_type,Lob,dependent_control,parent_rule_id,External_rule_id,Rule_Relation,_id
+rule-1,PFLaMrInput.aspx,,setcboPfCondoDeductLimit,cboPfCondoDeductLimit,"            If _oLobData.Policy.Input(FIELD_PFISO2012MULTISTATE).Value.CL_EqualsNoAbbreviation() Then            
+                lcboPfCondoDeductLimit.Visible = False            
+                cboPfCondoDeductLimit.Visible = False            
+                divPfCondoDeductLimit.Visible = False            
+            Else            
+                lcboPfCondoDeductLimit.ForControl = ""cboPfCondoDeductLimit""            
+                lcboPfCondoDeductLimit.Text = ""Sub-Limit on Assessment Resulting from Condominium Association Deductible""            
+                With cboPfCondoDeductLimit            
+                    .DataSource = _oLobBus.GetCondominiumDeductLimit()            
+                    .DataBind()            
+                    .EmptySelectionText = ""Select...""            
+                    For Each oItem As ListItem In .Items            
+","             Check condition _oLobData.Policy.Input(FIELD_PFISO2012MULTISTATE).Value.CL_EqualsNoAbbreviation()  if true execute below            
+                lcboPfCondoDeductLimit is Visible = False            
+                cboPfCondoDeductLimit is Visible = False            
+                divPfCondoDeductLimit is Visible = False            
+             Otherwise            
+                lcboPfCondoDeductLimit for the control = ""cboPfCondoDeductLimit""            
+                lcboPfCondoDeductLimit Content is = ""Sub-Limit on Assessment Resulting from Condominium Association Deductible""            
+                 Repeat using Object cboPfCondoDeductLimit            
+                     Source of data = _oLobBus.GetCondominiumDeductLimit()            
+                    .DataBind()            
+                    .EmptySelectio Content is = ""Select...""            
+                     Looping statement Each oItem  As ListItem In .Items            
+",direct_type_rule,,,rule-1,,rule-1,5fa93d2489d2a23c7d96993b
+,PFLaMrInput.aspx,,,cboPfCondoDeductLimit,setcboPfCondoDeductLimit(),setcboPfCondoDeductLimit(),,,,,,rule-1,5fa93d2489d2a23c7d96993c
+rule-2,PFLaMrInput.aspx,,setcboPfCondoDeductLimit,cboPfCondoDeductLimit,"                        If ComOut(oItem.Value.Trim).Equals(_oLobLoc.Input(""PfCondoDeductLimit"").Value.Trim()) Then            
+                            oItem.Selected = True            
+                            Exit For            
+                        End If            
+","                         Check condition ComOut(oItem.Value.Trim).Equals(_oLobLoc.Input(""PfCondoDeductLimit"").Value.Trim())  if true execute below            
+                            oItem.Selected = True            
+                             Exits the code block  Looping statement            
+                         End of Condition check            
+",direct_type_rule,,,"rule-1,rule-2",,"rule-1,rule-2",5fa93d2489d2a23c7d96993d
+,PFLaMrInput.aspx,,setcboPfCondoDeductLimit,cboPfCondoDeductLimit,"                    Next            
+                End With            
+            End If            
+","                     End of For loop            
+                 End of the  Repeat using Object block            
+             End of Condition check            
+",,,,rule-1,,rule-1,5fa93d2489d2a23c7d96993e
+rule-3,PFLaMrInput.aspx,,setddlPfLossCol,cboPfLossCol,"setddlPfLossCol():            _oLobLoc.Input(""PfLossCol"").Value = _oLobBus.GetPFLaMrCOL(_oLobLoc, _oLobData.Attributes)            
+                    If oItem.Value.Trim = _oLobLoc.Input(""PfLossCol"").Value.Trim() Then            
+                        oItem.Selected = True            
+                        Exit For            
+                    End If            
+","setddlPfLossCol():            _oLobLoc.Input(""PfLossCol"") Content is = _oLobBus.GetPFLaMrCOL(_oLobLoc, _oLobData.Attributes)            
+                     Check condition oItem.Value.Trim = _oLobLoc.Input(""PfLossCol"").Value.Trim()  if true execute below            
+                        oItem.Selected = True            
+                         Exits the code block  Looping statement            
+                     End of Condition check            
+",,,,rule-3,,rule-3,5fa93d2489d2a23c7d96993f
+,PFLaMrInput.aspx,,,cboPfLossCol,setddlPfLossCol(),setddlPfLossCol(),,,,,,rule-3,5fa93d2489d2a23c7d969940
+rule-4,PFLaMrInput.aspx,,setddlPfLossCol,cboPfLossCol,"            If _oLobData.Attributes(""useCovCauseLoss"") = ""Y"" Then            
+                lcboPfLossCol.Visible = True            
+                cboPfLossCol.Visible = True            
+            Else            
+                lcboPfLossCol.Visible = False            
+                cboPfLossCol.Visible = False            
+            End If            
+","             Check condition _oLobData.Attributes(""useCovCauseLoss"") = ""Y""  if true execute below            
+                lcboPfLossCol is Visible = True            
+                cboPfLossCol is Visible = True            
+             Otherwise            
+                lcboPfLossCol is Visible = False            
+                cboPfLossCol is Visible = False            
+             End of Condition check            
+",direct_rule,,,rule-4,,rule-4,5fa93d2489d2a23c7d969941
+,PFLaMrInput.aspx,,,cboPfLossCol,setddlPfLossCol(),setddlPfLossCol(),,,,,,rule-4,5fa93d2489d2a23c7d969942
+rule-5,PFLaMrInput.aspx,,setcboPfLossLimit,cboPfLossLimit,"            If _oLobData.Policy.Input(FIELD_PFISO2012MULTISTATE).Value.CL_EqualsNoAbbreviation() Then            
+                ddlPfLossLimit.Visible = False            
+                cboPfLossLimit.Visible = True            
+                With cboPfLossLimit            
+                    With attributes            
+","             Check condition _oLobData.Policy.Input(FIELD_PFISO2012MULTISTATE).Value.CL_EqualsNoAbbreviation()  if true execute below            
+                ddlPfLossLimit is Visible = False            
+                cboPfLossLimit is Visible = True            
+                 Repeat using Object cboPfLossLimit            
+                     Repeat using Object attributes            
+",direct_type_rule,,,rule-5,,rule-5,5fa93d2489d2a23c7d969943
+,PFLaMrInput.aspx,,,cboPfLossLimit,setcboPfLossLimit(),setcboPfLossLimit(),,,,,,rule-5,5fa93d2489d2a23c7d969944
+rule-6,PFLaMrInput.aspx,,setcboPfLossLimit,cboPfLossLimit,"                        If String.IsNullOrWhiteSpace(selectedValue).Equals(False) Then            
+                        .Add(ValueSelected, selectedValue)            
+                        Else            
+                        .Add(ValueSelected, String.Empty)            
+                        End If                                
+","                         Check condition String.IsNullOrWhiteSpace(selectedValue).Equals(False)  if true execute below            
+                        .Add(ValueSelected, selectedValue)            
+                         Otherwise            
+                        .Add(ValueSelected, String.Empty)            
+                         End of Condition check                                
+",direct_rule,,,"rule-5,rule-6",,"rule-5,rule-6",5fa93d2489d2a23c7d969945
+,PFLaMrInput.aspx,,setcboPfLossLimit,cboPfLossLimit,"                        .Add(""Code"", Code)            
+                        .Add(""DataTextField"", Code)            
+                        .Add(""DataValueField"", Code)            
+                     End With                                 
+                    lossAssessmentDataTable = _oLobBus.GetListLossAssessmentLimit(_oLobData.Policy.Input, validatePfIso2012Phase2)             
+                    LoadComboBox(cboPfLossLimit, attributes, lossAssessmentDataTable, False, _stxtcboPfLossLimit)            
+                    .OnClientChange = ""cboPfLossLimit_onchange()""            
+                    .EnableOnSubmit = True            
+                    .AllowKeys = ""0-9,""            
+                    .ToolTip = ""If LA coverage requested, enter LA limit.  Higher limits must be in increments of $5,000""            
+                    .EmptySelectionText = EmptySelectedText            
+                End With            
+            Else            
+                cboPfLossLimit.Visible = False            
+                lcboPfCondoDeductLimit.ForControl = ""ddlPfLossLimit""            
+                ddlPfLossLimit.Visible = True                          
+                With ddlPfLossLimit            
+                    .EnableOnSubmit = True                                      
+                     lossAssessmentDataTable = _oLobBus.GetListLossAssessmentLimit(_oLobData.Policy.Input, validatePfIso2012Phase2)                                    
+                    .DataSource = lossAssessmentDataTable            
+                    .DataBind()                                
+                    Dim pfLossAssessmentLimit As String = String.Format(""{0:##,##,###}"",selectedValue.CL_ToLong)            
+",".Add(""Code"", Code)            
+                        .Add(""DataTextField"", Code)            
+                        .Add(""DataValueField"", Code)            
+                      End of the  Repeat using Object block                                 
+                    lossAssessmentDataTable = _oLobBus.GetListLossAssessmentLimit(_oLobData.Policy.Input,  ValidateFlag )             
+                    LoadComboBox(cboPfLossLimit, attributes, lossAssessmentDataTable, False,  SetComboboxLimit )            
+                    .OnClientChange = ""cboPfLossLimit_onchange()""            
+                    .EnableOnSubmit = True            
+                     acceptable input keys = ""0-9,""            
+                    .ToolTip = "" Check condition LA coverage requested, enter LA limit.  Higher limits must be in increments of $5,000""            
+                    .EmptySelectionText = EmptySelectedText            
+                 End of the  Repeat using Object block            
+             Otherwise            
+                cboPfLossLimit is Visible = False            
+                lcboPfCondoDeductLimit for the control = ""ddlPfLossLimit""            
+                ddlPfLossLimit is Visible = True                          
+                 Repeat using Object ddlPfLossLimit            
+                    .EnableOnSubmit = True                                      
+                     lossAssessmentDataTable = _oLobBus.GetListLossAssessmentLimit(_oLobData.Policy.Input,  ValidateFlag )                                    
+                     Source of data = lossAssessmentDataTable            
+                    .DataBind()                                
+                     Declare variable as pfLossAssessmentLimit  As  String Data type = String.Format(""{0:##,##,###}"",selectedValue.CL_ToLong)",,,,rule-5,,rule-5,5fa93d2489d2a23c7d969946
+rule-7,PFLaMrInput.aspx,,setcboPfLossLimit,cboPfLossLimit,"                    If .Items.FindByText(pfLossAssessmentLimit) IsNot Nothing  Then                                
+                     .Items.FindByText(pfLossAssessmentLimit).Selected = True                                
+                    End If            
+","                     Check condition .Items.FindByText(pfLossAssessmentLimit)  is not same as Nothing   if true execute below                                
+                     .Items.FindByText(pfLossAssessmentLimit).Selected = True                                
+                     End of Condition check            
+",direct_type_rule,,,"rule-5,rule-7",,"rule-5,rule-7",5fa93d2489d2a23c7d969947
+,PFLaMrInput.aspx,,setcboPfLossLimit,cboPfLossLimit,"                    .EmptySelectionText = EmptySelectedText            
+                End With                     
+            End If            
+","                    .EmptySelectionText = EmptySelectedText            
+                 End of the  Repeat using Object block                     
+             End of Condition check            
+",,,,rule-5,,rule-5,5fa93d2489d2a23c7d969948
+rule-8,PFLaMrInput.aspx,,setcboPfLossLimit,ddlPfLossLimit,"            If _oLobData.Policy.Input(FIELD_PFISO2012MULTISTATE).Value.CL_EqualsNoAbbreviation() Then            
+                ddlPfLossLimit.Visible = False            
+                cboPfLossLimit.Visible = True            
+                With cboPfLossLimit            
+                    With attributes            
+","             Check condition _oLobData.Policy.Input(FIELD_PFISO2012MULTISTATE).Value.CL_EqualsNoAbbreviation()  if true execute below            
+                ddlPfLossLimit is Visible = False            
+                cboPfLossLimit is Visible = True            
+                 Repeat using Object cboPfLossLimit            
+                     Repeat using Object attributes            
+",direct_type_rule,,,rule-8,,rule-8,5fa93d2489d2a23c7d969949
+,PFLaMrInput.aspx,,,ddlPfLossLimit,setcboPfLossLimit(),setcboPfLossLimit(),,,,,,rule-8,5fa93d2489d2a23c7d96994a
+rule-9,PFLaMrInput.aspx,,setcboPfLossLimit,ddlPfLossLimit,"                        If String.IsNullOrWhiteSpace(selectedValue).Equals(False) Then            
+                        .Add(ValueSelected, selectedValue)            
+                        Else            
+                        .Add(ValueSelected, String.Empty)            
+                        End If                                
+","                         Check condition String.IsNullOrWhiteSpace(selectedValue).Equals(False)  if true execute below            
+                        .Add(ValueSelected, selectedValue)            
+                         Otherwise            
+                        .Add(ValueSelected, String.Empty)            
+                         End of Condition check                                
+",direct_rule,,,"rule-8,rule-9",,"rule-8,rule-9",5fa93d2489d2a23c7d96994b
+,PFLaMrInput.aspx,,setcboPfLossLimit,ddlPfLossLimit,"                        .Add(""Code"", Code)            
+                        .Add(""DataTextField"", Code)            
+                        .Add(""DataValueField"", Code)            
+                     End With                                 
+                    lossAssessmentDataTable = _oLobBus.GetListLossAssessmentLimit(_oLobData.Policy.Input, validatePfIso2012Phase2)             
+                    LoadComboBox(cboPfLossLimit, attributes, lossAssessmentDataTable, False, _stxtcboPfLossLimit)            
+                    .OnClientChange = ""cboPfLossLimit_onchange()""            
+                    .EnableOnSubmit = True            
+                    .AllowKeys = ""0-9,""            
+                    .ToolTip = ""If LA coverage requested, enter LA limit.  Higher limits must be in increments of $5,000""            
+                    .EmptySelectionText = EmptySelectedText            
+                End With            
+            Else            
+                cboPfLossLimit.Visible = False            
+                lcboPfCondoDeductLimit.ForControl = ""ddlPfLossLimit""            
+                ddlPfLossLimit.Visible = True                          
+                With ddlPfLossLimit            
+                    .EnableOnSubmit = True                                      
+                     lossAssessmentDataTable = _oLobBus.GetListLossAssessmentLimit(_oLobData.Policy.Input, validatePfIso2012Phase2)                                    
+                    .DataSource = lossAssessmentDataTable            
+                    .DataBind()                                
+                    Dim pfLossAssessmentLimit As String = String.Format(""{0:##,##,###}"",selectedValue.CL_ToLong)            
+",".Add(""Code"", Code)            
+                        .Add(""DataTextField"", Code)            
+                        .Add(""DataValueField"", Code)            
+                      End of the  Repeat using Object block                                 
+                    lossAssessmentDataTable = _oLobBus.GetListLossAssessmentLimit(_oLobData.Policy.Input,  ValidateFlag )             
+                    LoadComboBox(cboPfLossLimit, attributes, lossAssessmentDataTable, False,  SetComboboxLimit )            
+                    .OnClientChange = ""cboPfLossLimit_onchange()""            
+                    .EnableOnSubmit = True            
+                     acceptable input keys = ""0-9,""            
+                    .ToolTip = "" Check condition LA coverage requested, enter LA limit.  Higher limits must be in increments of $5,000""            
+                    .EmptySelectionText = EmptySelectedText            
+                 End of the  Repeat using Object block            
+             Otherwise            
+                cboPfLossLimit is Visible = False            
+                lcboPfCondoDeductLimit for the control = ""ddlPfLossLimit""            
+                ddlPfLossLimit is Visible = True                          
+                 Repeat using Object ddlPfLossLimit            
+                    .EnableOnSubmit = True                                      
+                     lossAssessmentDataTable = _oLobBus.GetListLossAssessmentLimit(_oLobData.Policy.Input,  ValidateFlag )                                    
+                     Source of data = lossAssessmentDataTable            
+                    .DataBind()                                
+                     Declare variable as pfLossAssessmentLimit  As  String Data type = String.Format(""{0:##,##,###}"",selectedValue.CL_ToLong)",,,,rule-8,,rule-8,5fa93d2489d2a23c7d96994c
+rule-10,PFLaMrInput.aspx,,setcboPfLossLimit,ddlPfLossLimit,"                    If .Items.FindByText(pfLossAssessmentLimit) IsNot Nothing  Then                                
+                     .Items.FindByText(pfLossAssessmentLimit).Selected = True                                
+                    End If            
+","                     Check condition .Items.FindByText(pfLossAssessmentLimit)  is not same as Nothing   if true execute below                                
+                     .Items.FindByText(pfLossAssessmentLimit).Selected = True                                
+                     End of Condition check            
+",direct_type_rule,,,"rule-8,rule-10",,"rule-8,rule-10",5fa93d2489d2a23c7d96994d
+,PFLaMrInput.aspx,,setcboPfLossLimit,ddlPfLossLimit,"                    .EmptySelectionText = EmptySelectedText            
+                End With                     
+            End If            
+","                    .EmptySelectionText = EmptySelectedText            
+                 End of the  Repeat using Object block                     
+             End of Condition check            
+",,,,rule-8,,rule-8,5fa93d2489d2a23c7d96994e
+rule-11,PFLaMrInput.aspx,,setCauseOfLoss,ltxtCauseOfLoss1,"            If String.IsNullOrEmpty(sCOLDesc) = True Then            
+                ltxtCauseOfLoss1.Text = """"            
+                ltxtCauseOfLoss2.Text = """"            
+            Else            
+                ltxtCauseOfLoss1.Text = ""Cause of Loss:""            
+                ltxtCauseOfLoss2.Text = sCOLDesc            
+            End If            
+","             Check condition String.IsNullOrEmpty(sCOLDesc) = True  if true execute below            
+                ltxtCauseOfLoss1 Content is = """"            
+                ltxtCauseOfLoss2 Content is = """"            
+             Otherwise            
+                ltxtCauseOfLoss1 Content is = ""Cause of Loss:""            
+                ltxtCauseOfLoss2 Content is = sCOLDesc            
+             End of Condition check            
+",direct_rule,,,rule-11,,rule-11,5fa93d2489d2a23c7d96994f
+,PFLaMrInput.aspx,,,ltxtCauseOfLoss1,setCauseOfLoss(),setCauseOfLoss(),,,,,,rule-11,5fa93d2489d2a23c7d969950
+rule-12,PFLaMrInput.aspx,,setCauseOfLoss,ltxtCauseOfLoss2,"            If String.IsNullOrEmpty(sCOLDesc) = True Then            
+                ltxtCauseOfLoss1.Text = """"            
+                ltxtCauseOfLoss2.Text = """"            
+            Else            
+                ltxtCauseOfLoss1.Text = ""Cause of Loss:""            
+                ltxtCauseOfLoss2.Text = sCOLDesc            
+            End If            
+","             Check condition String.IsNullOrEmpty(sCOLDesc) = True  if true execute below            
+                ltxtCauseOfLoss1 Content is = """"            
+                ltxtCauseOfLoss2 Content is = """"            
+             Otherwise            
+                ltxtCauseOfLoss1 Content is = ""Cause of Loss:""            
+                ltxtCauseOfLoss2 Content is = sCOLDesc            
+             End of Condition check            
+",direct_rule,,,rule-12,,rule-12,5fa93d2489d2a23c7d969951
+,PFLaMrInput.aspx,,,ltxtCauseOfLoss2,setCauseOfLoss(),setCauseOfLoss(),,,,,,rule-12,5fa93d2489d2a23c7d969952
+rule-13,PFLaMrInput.aspx,,settxtPfUnitNumber,txtPfUnitNumber,"            If _oLobData.Policy.Input(FIELD_PFISO2012MULTISTATE).Value.CL_EqualsNoAbbreviation() Then            
+                ltxttxtPfUnitNumber.Visible = False            
+                txtPfUnitNumber.Visible = False            
+                divPfUnitNumber.Visible = False            
+            Else            
+                ltxttxtPfUnitNumber.ForControl = ""txtPfUnitNumber""            
+                ltxttxtPfUnitNumber.Text = ""Unit Number""            
+                With txtPfUnitNumber            
+","             Check condition _oLobData.Policy.Input(FIELD_PFISO2012MULTISTATE).Value.CL_EqualsNoAbbreviation()  if true execute below            
+                ltxttxtPfUnitNumber is Visible = False            
+                txtPfUnitNumber is Visible = False            
+                divPfUnitNumber is Visible = False            
+             Otherwise            
+                ltxttxtPfUnitNumber for the control = ""txtPfUnitNumber""            
+                ltxttxtPfUnitNumber Content is = ""Unit Number""            
+                 Repeat using Object txtPfUnitNumber            
+",direct_type_rule,,,rule-13,,rule-13,5fa93d2489d2a23c7d969953
+,PFLaMrInput.aspx,,,txtPfUnitNumber,settxtPfUnitNumber(),settxtPfUnitNumber(),,,,,,rule-13,5fa93d2489d2a23c7d969954
+rule-14,PFLaMrInput.aspx,,settxtPfUnitNumber,txtPfUnitNumber,"                    If New HashSet(Of String)() From {""NBQU"", ""REQU""}.Contains(_oLobData.Attributes.Common.PolicyTransactionType).Equals(False) Then            
+                        With .Validators.Required            
+                            .Enabled = True            
+                            .Severity = ValidatorSeverityType.Critical            
+                        End With            
+                    End If            
+","                     Check condition  Create instance of class HashSet(Of String)() From {""NBQU"", ""REQU""}.Contains(_oLobData.Attributes.Common.PolicyTransactionType).Equals(False)  if true execute below            
+                         Repeat using Object .Validators.Required            
+                             is enabled = True            
+                             severity level is = ValidatorSeverityType.Critical            
+                         End of the  Repeat using Object block            
+                     End of Condition check            
+",direct_rule,,,"rule-13,rule-14",,"rule-13,rule-14",5fa93d2489d2a23c7d969955
+,PFLaMrInput.aspx,,settxtPfUnitNumber,txtPfUnitNumber,"                    .Text = _oLobLoc.Input(""PfUnitNumber"").Value.Trim()            
+                    .MaxLength = 20            
+                    .AllowKeys = ""0-9A-Z""            
+                End With            
+            End If            
+","                     Content is = _oLobLoc.Input(""PfUnitNumber"").Value.Trim()            
+                     Maximum allowed characters = 20            
+                     acceptable input keys = ""0-9A-Z""            
+                 End of the  Repeat using Object block            
+             End of Condition check            
+",,,,rule-13,,rule-13,5fa93d2489d2a23c7d969956

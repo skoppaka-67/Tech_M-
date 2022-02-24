@@ -1,0 +1,202 @@
+<div [@routerTransition]>
+    <h2 class="text-muted">Dashboard - LCaaS<small></small></h2>
+    <div class="row">
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-xl-4 col-lg-3">
+                 <!-- <a [routerLink]="'/masterinv'" class="underlinenone"><app-stat [bgClass]="'primary'" [icon]="'fas fa-folder-open fa-3x fa-fw'" [count]="dataSets.dash_no_of_components" [link]="'/masterinv'" [label]="'Components'"></app-stat></a> -->
+                  <a [routerLink]="'/masterinvApplication'" class="underlinenone"><app-stat [bgClass]="'primary'" [icon]="'fas fa-folder-open fa-3x fa-fw'" [count]="dataSets.dash_no_of_components" [link]="'/masterinv'" [label]="'Components'"></app-stat></a>
+        </div>
+        <div class="col-xl-4 col-lg-3"> 
+                 <!-- <a [routerLink]="'/masterinv'" class="underlinenone"><app-stat [bgClass]="'warning'" [icon]="'fas fa-align-justify fa-3x fa-fw'" [count]="dataSets.dash_total_loc" [link]="'/masterinv'" [label]="'Lines of Code'"></app-stat> </a> -->
+                  <a [routerLink]="'/masterinvApplication'" class="underlinenone"><app-stat [bgClass]="'warning'" [icon]="'fas fa-align-justify fa-3x fa-fw'" [count]="dataSets.dash_total_loc" [link]="'/masterinv'" [label]="'Lines of Code'"></app-stat> </a>
+        </div>
+        <div class="col-xl-4 col-lg-3">
+                <!-- <a [routerLink]="'/forms'" class="underlinenone"><app-stat [bgClass]="'success'" [icon]="'fas fa-table'" [count]="dataSets.dash_total_number_of_tables" [label]="'No of Tables'" [link]="'/forms'"></app-stat></a> -->
+                 <a [routerLink]="'/formsApplication'" class="underlinenone"><app-stat [bgClass]="'success'" [icon]="'fas fa-table'" [count]="dataSets.dash_total_number_of_tables" [label]="'No of Tables'" [link]="'/forms'"></app-stat></a>
+
+        </div>
+    </div>
+    <div><br></div>
+    <div class="row">
+            <div class="col-xl-4 col-lg-3">
+                    <!-- <a [routerLink]="'/orphan'" class="underlinenone"><app-stat [bgClass]="'secondary'" [icon]="'fas fa-trash'" [count]="dataSets.dash_number_of_orphan_components" [label]="'Orphan/Driver Components'"></app-stat></a> -->
+                      <a [routerLink]="'/orphanApplication'" class="underlinenone"><app-stat [bgClass]="'secondary'" [icon]="'fas fa-trash'" [count]="dataSets.dash_number_of_orphan_components" [label]="'Orphan/Driver Components'"></app-stat></a>
+            </div>
+            <div class="col-xl-4 col-lg-3">
+                    <!-- <a [routerLink]="'/missingcomp'" class="underlinenone"><app-stat [bgClass]="'danger'" [icon]="'fas fa-search-minus'" [count]="dataSets.dash_number_of_missing_components" [label]="'Missing Components'"></app-stat></a> -->
+                      <a [routerLink]="'/missingcompApplication'" class="underlinenone"><app-stat [bgClass]="'danger'" [icon]="'fas fa-search-minus'" [count]="dataSets.dash_number_of_missing_components" [label]="'Missing Components'"></app-stat></a>
+
+            </div>
+            <div class="col-xl-4 col-lg-3">
+                    <!-- <a [routerLink]="'/deadpara'" class="underlinenone"><app-stat [bgClass]="'dark'" [icon]="'fas fa-outdent'" [count]="dataSets.dash_dead_lines_count" [label]="'Number of Dead Code'"></app-stat></a> -->
+                      <a [routerLink]="'/deadparaReport'" class="underlinenone"><app-stat [bgClass]="'dark'" [icon]="'fas fa-outdent'" [count]="dataSets.dash_dead_lines_count" [label]="'Number of Dead Code'"></app-stat></a>
+            </div>
+        </div>
+</div>
+<div><br>
+</div>  
+<div class="row">
+    <div class="col col-sm-13">
+        <div class="card mb-3">
+            <div class="card-header bg-secondary text-white">
+                Top 10 - Application vs Tech Stack Vs LoC
+                <!-- <button (click)="downloadCTop10AppTechLoc('Top 10 - Application vs Tech Stack Vs LoC')" class="btn btn-primary" style="float:right;">Download</button> -->
+                <button id="top10locBtn" (click)="domtoImage('top10appvstechvsloc','Top 10 - Application vs Tech Stack Vs LoC')" class="btn btn-primary" style="float:right;">Download</button>
+            </div>
+            <div class="card-body" id="top10appvstechvsloc">
+               <!-- <canvas baseChart height="100px" [datasets]="" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                </canvas> -->
+                <canvas baseChart height="100px" [datasets]="barChartData" [colors]="barChartColors" [labels]="barChartLabelHeader" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="row">
+            <div class="col col-sm-6">
+                    <div class="card mb-3">
+                    <div class="card-header bg-secondary text-white">
+                        <div class="bg-secondary text-white">
+                            Orphan Component
+                            <!-- <button class="btn btn-primary" (click)="downloadChart('orphanchart','Orphan Component',500,500);" style="float:right;">Download</button> -->
+                            <!-- <button class="btn btn-primary" (click)="downloadCOrphan('Orphan Component')" style="float:right;">Download</button> -->
+                            <button id="orphanBtn" class="btn btn-primary" (click)="domtoImage('orphanchart','Orphan Component')" style="float:right;">Download</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="card-body" id="orphanchart">
+                            <canvas baseChart height="180px" [data]="doughnutChartData" [labels]="doughnutChartLabels" [colors]="doughnutColors" [chartType]="doughnutChartType">
+                            </canvas>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+            <div class="col col-sm-6">
+                <div class="card mb-3">
+                    <div class="card-header bg-secondary text-white">
+                        Technical Debts- Dead Code
+                        <!-- <button (click)="downloadChart('TechDebtschart','Technical Debts- Deadline',500,500)" type="button" class="btn btn-primary" style="float:right;">Download</button> -->
+                        <!-- <button (click)="downloadCDeadline('Technical Debts- Deadline')" type="button" class="btn btn-primary" style="float:right;">Download</button> -->
+                        <button id="techdebtBtn" (click)="domtoImage('TechDebtschart','Technical Debts- Deadline')" type="button" class="btn btn-primary" style="float:right;">Download</button>
+                    </div>
+                    <div class="card-body" id="TechDebtschart">
+                        <canvas baseChart height="190px" [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType" [colors]="pieColors"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-sm-6">
+                <div class="card mb-3">
+                     <div class="card-header bg-secondary text-white">
+                        Tech Stack vs Component count
+                        <!-- <button (click)="downloadCTechvsLoc('Tech Stack vs Component count')" class="btn btn-primary" style="float:right;">Download</button>  -->
+                        <button id="techLocBtn" (click)="domtoImage('TechStackvsLoCchart','Tech Stack vs Component count')" class="btn btn-primary" style="float:right;">Download</button> 
+                    </div>
+                    <div class="card-body" id="TechStackvsLoCchart">
+                            <canvas baseChart height="180px"
+                            [chartType]="chartType"
+                            [datasets]="chartDatasets"
+                            [labels]="horizontalChartLabels"
+                            [colors]="chartColors" 
+                            [options]="chartOptions"
+                            [legend]="false"
+                            (chartHover)="chartHovered($event)"
+                            (chartClick)="chartClicked($event)">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-sm-6">
+                <div class="card mb-3">
+                <div class="card-header bg-secondary text-white">
+                    <div class="bg-secondary text-white">
+                        Rules By Type
+                        <!-- <button class="btn btn-primary" (click)="downloadCRules('Rules By Type')" style="float:right;">Download</button> -->
+                        <button id="ruleBtn" class="btn btn-primary" (click)="domtoImage('orphanRulechart','Rules By Type')" style="float:right;">Download</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card-body" id="orphanRulechart">
+                        <canvas baseChart height="150px" [data]="doughnutChartRuleData" [labels]="doughnutChartRuleLabels" [colors]="doughnutRuleColors" [chartType]="doughnutChartRuleType">
+                        </canvas>
+                    </div>
+                </div>
+                <div style="height: 34px;"><label id='lblTotRule' name='lblTotRule' hidden></label></div>
+                </div>
+        </div>
+        </div>
+    <div class="row">
+            <div class="col col-sm-6">
+                    <div class="card mb-3">
+                        <div class="card-header bg-secondary text-white">
+                                Top 5 Application vs Dead Code 
+                        <!-- <button (click)="downloadCTop5TechvsDead('Top 5 Application vs Deadlines')" class="btn btn-primary" style="float:right;">Download</button> -->
+                        <button id="deadlineBtn" (click)="domtoImage('top5appvsdeadline','Top 5 Application vs Deadlines')" class="btn btn-primary" style="float:right;">Download</button>
+                      </div>
+                        <div class="card-body" id="top5appvsdeadline">
+                            <canvas baseChart height="190" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-sm-6">
+                        <div class="card mb-3">
+                            <div class="card-header bg-secondary text-white">
+                                    Top 5 Application vs LoC  
+                                <!-- <button (click)="downloadCTop5TechvsLoc('Top 5 Application vs LoC')" class="btn btn-primary" style="float:right;">Download</button> -->
+                                <button id="appLocBtn" (click)="domtoImage('top5appvsloc','Top 5 Application vs LoC')" class="btn btn-primary" style="float:right;">Download</button>
+                            </div>
+                            <div class="card-body" id="top5appvsloc">
+                                    <canvas baseChart height="190" [datasets]="line2ChartData" [labels]="line2ChartLabels" [options]="polarChartOptions" [colors]="polarChartColors" [legend]="line2ChartLegend" [chartType]="line2ChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                                        </canvas>
+                            </div>
+                        </div>
+                    </div>
+    </div>
+    <div class="row">
+    <div class="col col-sm-6">
+            <div class="card mb-3">
+                <div class="card-header bg-secondary text-white">
+                        Application wise Cyclomatic Complexity
+                <!-- <button (click)="downloadAppWiseCyclo('Application wise Cyclomatic Complexity')" class="btn btn-primary" style="float:right;">Download</button> -->
+                <button id="cycloBtn" (click)="domtoImage('appwisecyclo','Application wise Cyclomatic Complexity')" class="btn btn-primary" style="float:right;">Download</button>
+                </div>
+                <div class="card-body" id="appwisecyclo">
+                <canvas baseChart height="190" [datasets]="lineChart2Data" [labels]="lineChart2Labels" [options]="lineChart2Options" [colors]="lineChart2Colors" [legend]="lineChart2Legend" [chartType]="lineChart2Type" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)">
+                </canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-6">
+                <div class="card mb-3">
+                    <div class="card-header bg-secondary text-white">
+                            Application wise Business Rules 
+                            <!-- <button (click)="downloadAppWiseRules('Application wise Rules')" class="btn btn-primary" style="float:right;">Download</button> -->
+                        <button id="rulesBtn" (click)="domtoImage('appwiseRules','Application wise Rules')" class="btn btn-primary" style="float:right;">Download</button>
+                    </div>
+                    <div class="card-body" id="appwiseRules">
+                        <canvas baseChart height="190px" [datasets]="barChart2Data" [colors]="barChart2Colors" [labels]="barChart2LabelHeader" [options]="barChart2Options" [legend]="barChart2Legend" [chartType]="barChart2Type"></canvas>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="row">
+            <div class="col col-sm-13">
+                <div class="card mb-3">
+                    <div class="card-header bg-secondary text-white">
+                        Application wise Inbound & Outbound
+                        <!-- <button (click)="downloadAppWiseInOutBound('Application wise Inbound & Outbound')" class="btn btn-primary" style="float:right;">Download</button> -->
+                        <button id="inoutboundBtn" (click)="domtoImage('appwiseInOutBound','Application wise Inbound & Outbound')" class="btn btn-primary" style="float:right;">Download</button>
+                    </div>
+                    <div class="card-body" id="appwiseInOutBound">
+                        <canvas baseChart height="100px" [datasets]="barChart3Data" [colors]="barChart3Colors" [labels]="barChart3LabelHeader" [options]="barChart3Options" [legend]="barChart3Legend" [chartType]="barChart3Type"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--<hr />
+     <ngb-alert [type]="alert.type" (close)="closeAlert(alert)" *ngFor="let alert of alerts">{{ alert.message }}</ngb-alert> 
+    <hr />-->
+    

@@ -1,0 +1,26 @@
+a.menu_links { cursor: pointer; }
+.highlight {
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
+}
+
+#compName {
+    font-weight:bold
+}
+.modal-body {
+    max-height: 80vh; /* max 80% of the viewport height */
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.screenCode{
+    background-color: black;
+    color: green;
+    font-family: "Lucida Sans Typewriter";  
+    margin: 0px;
+    height: auto !important;
+    width: auto !important;
+    overflow-x: hidden !important;
+    // margin-left: 5em;
+}

@@ -1,0 +1,483 @@
+filename,lob,SectionID,SectionName,CLASLabel,ScreenField,CLASField,Type,Required,Length,Allowkeys,Min-Max,Tooltip,Enable,DropdownValue,StoredValue,ErrorMessage,Comments
+CPPropertyInput.aspx,LobCP,,,,hidevttArg,,HiddenField,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,,,,hidevtTarget,,HiddenField,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,pnliLimits, Limits,Limit Type,ddlCpPfTypeLimits,CpPfTypeofLimits,DropDownList, True ,,,,"1.) ""Select desired Limit Type.  Only one Limit Type can be selected.""
+",,"1.)Proc name: uspSelect_CP_Coverage_Limit_Type
+,Key name:PFLimitType,Paramater:"," Help_Value
+", Property LimitType is required.,
+CPPropertyInput.aspx,LobCP,pnliLimits, Limits,Blanket Limits<font size=1> (The most we will pay for loss at any one covered location)</font,lblBlanket,,label,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,pnliLimits, Limits,Blanket Type,ddlCpPfBlanketLmtCode,CpPfBlanketLmtCode,DropDownList, True ,,,,"1.) ""Select Blankett Type.""
+",,"1.)Proc name: uspSelect_CP_Prop_BlanketType
+,Key name:PFBlanketType,Paramater:"," Help_Value
+", Blanket Type is required if selected.,
+CPPropertyInput.aspx,LobCP,pnliLimits, Limits,Bldg,txtCpPfBldgLimit,CpPfBldgLimit,TextBox, True ,12," 0-9,.",,"1.) ""Blanket Bldg Limit.""
+",,,, Building Limit is required if selected.,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,pnliLimits, Limits,,chkControlchkCpPfBldgLimitInd,CpPfBldgLimitInd,CheckBox,,,,,"1.) ""Check if you want to override the CLAS default Blanket Bldg Limit.  Then enter amended limit in Blanket Bldg  Limit field.""
+",,,Y,,
+CPPropertyInput.aspx,LobCP,pnliLimits, Limits,Bpp,txtCpPfBppLimit,CpPfBppLimit,TextBox, True ,12," 0-9,.",,"1.) ""Blanket BPP Limit.""
+",,,, BPP Limit is required if selected.,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,pnliLimits, Limits,,chkControlchkCpPfBPPLimitInd,CpPfBppLimitInd,CheckBox,,,,,"1.) ""Check if you want to override the CLAS default Blanket BPP Limit.  Then enter amended limit in Blanket BPP Limit field.""
+",,,Y,,
+CPPropertyInput.aspx,LobCP,pnliLimits, Limits,Combined Bldg &&amp; BPP $,txtCpPfCombinedLmt,CpPfCombinedLmt,TextBox, True ,12," 0-9,.",,"1.) ""Combined Blanket Bldg and BPP Limit""
+",,,, Combined Limit is required if selected.,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,pnliLimits, Limits,,chkControlchkCpPfCombinedLimitInd,CpPfCombinedLmtInd,CheckBox,,,,,"1.) ""Check if you want to override the CLAS default Combined Blanket Bldg & BPP Limit.  Then enter amended  limit in Combined Blanket Bldg & BPP Limit field.""
+",,,Y,,
+CPPropertyInput.aspx,LobCP,pnliLimits, Limits,Scheduled Locations Limits,lblSchedule,,label,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,pnliLimits, Limits,,lnkChooseLocations,,LinkButton,,,,,1.) Select this Link for List property locations in order to choose locations to be scheduled.,,,,,
+CPPropertyInput.aspx,LobCP,pnliLimits, Limits,,hdnLocsScheduled,,HiddenField,,,,,,,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,pnliLimits, Limits,,chkCpPfNwlBltAgrdBldgInd,"1.)CpPfNwlBltAqrdBldgInd
+2.)CpPfNwlBltAqrdBldgLmt",CheckBox,,,,,"1.) ""Automatically included for scheduled locations. N/A when blanket coverage. Deselect if coverage is to be deleted.""
+",,,Y,,
+CPPropertyInput.aspx,LobCP,pnliLimits, Limits,Newly Built or Acquired Building,txtCpPfNwlBltAgrdBldgLmt,CpPfNwlBltAqrdBldgLmt,TextBox,,12," 0-9,.",,"1.) ""Defaults to $500,000.  Can be increased or decreased but cannot be deleted.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,pnliLimits, Limits,,chkCpPfPersPropAgrdInd,"1.)CpPfPersPropAqrdInd
+2.)CpPfPersPropAqrdLmt",CheckBox,,,,,"1.) ""Automatically included for scheduled locations. N/A when blanket coverage. Deselect if coverage is to be deleted.""
+",,,Y,,
+CPPropertyInput.aspx,LobCP,pnliLimits, Limits,Personal Property - Acquired Location,txtCpPfPersPropAgrdLmt,CpPfPersPropAqrdLmt,TextBox,,12," 0-9,.",,"1.) ""Defaults to $250,000.  Can be increased or decreased but cannot be deleted.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,pnliLimits, Limits,,chkCpPfLocNtDescInd,"1.)CpPfLocNtDescInd
+2.)CpPfLocNtDescLmt",CheckBox,,,,,"1.) ""Automatically included for scheduled locations. N/A when blanket coverage. Deselect if coverage is to be deleted.""
+",,,Y,,
+CPPropertyInput.aspx,LobCP,pnliLimits, Limits,Locations &&quot;you&&quot; elect not to describe,txtCpPfLocNtDescLmt,CpPfLocNtDescLmt,TextBox,,12," 0-9,.",,"1.) ""Defaults to $100,000.  Can be increased or decreased but cannot be deleted.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,pnliLimits, Limits,,chkCpPfCoinsInd,"1.)CpPfCoinsInd
+2.)CpPfCoinsLmt",CheckBox,,,,,"1.) ""Automatically applies for scheduled locations. N/A when blanket coverage.""
+",,,Y,,
+CPPropertyInput.aspx,LobCP,pnliLimits, Limits,Coinsurance,ddlCpPfCoinsLmt,CpPfCoinsLmt,DropDownList,,,,,"1.) ""Defaults to 100%.  Can be changed or deleted by selecting None""
+",,"1.)Proc name: uspSelect_CP_Coinsurance
+,Key name:PFCoinsurance,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,pnliDeductibleType, Deductible Type,Deductible Type,lblDeductibleType,,label,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,pnliDeductibleType, Deductible Type,,rdoCpPfSingleDedInd,"1.)CpPfSingleDedInd
+2.)CpPfSingleDedAmt",RadioButton,,,,,"1.) ""CLAS defaults to $5,000 single dollar amount deductible.  Can amend deductible amount or change to percentage of loss deductible.""
+",,,Y,,
+CPPropertyInput.aspx,LobCP,pnliDeductibleType, Deductible Type,,rdoCpPfPctofLossInd,"1.)CpPfPcntgLossInd
+2.)CpPfPcntgLossPcntge
+3.)CpPfPcntgLossAmt",RadioButton,,,,,"1.) ""Check if Percentage of Loss Deductible applies.  Need to complete both % and minimum deductible fields.""
+",,,Y,,
+CPPropertyInput.aspx,LobCP,pnliDeductibleType, Deductible Type,,ddlCPPfSingleDedAmt,CpPfMltDedSLocAllOthAmt,DropDownList, True ,,,,"1.) String.Empty
+",,"1.)Proc name: uspSelect_CP_Dollar_Deductible
+,Key name:PFDeductible,Paramater:"," Help_Value
+", Single Deductible is required if selected.,
+CPPropertyInput.aspx,LobCP,pnliDeductibleType, Deductible Type,,ddlCPPfPcntgLossPcntg,CpPfMltDedSLocAllOthPct,DropDownList, True ,,,,"1.) ""Please select Percentage of Loss deductible.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+", Percentage of Loss Deductible percent is required if selected.,
+CPPropertyInput.aspx,LobCP,pnliDeductibleType, Deductible Type,,hdnThreeYear,,HiddenField,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,pnliDeductibleType, Deductible Type,,hdn3YGrossLossAmt,,HiddenField,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,pnliDeductibleType, Deductible Type,,hdnDelCount,,HiddenField,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,pnliDeductibleType, Deductible Type,Minimum Deductible,ddlCPPfPcntgLossAmt,CpPfMltDedSLocAllOthAmt,DropDownList, True ,,,,"1.) ""Please select Percentage of Loss deductible minimum dollar deductible.""
+",,"1.)Proc name: uspSelect_CP_Prct_Loss_Ded_Min_Dollar
+,Key name:PFPercentMin,Paramater:"," Help_Value
+", Percentage of Loss Deductible minimum amount is required if selected.,
+CPPropertyInput.aspx,LobCP,pnliInsuredValuesItem, COP Insured Values,Year,lblYear,,label,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,pnliInsuredValuesItem, COP Insured Values,Building && Personal Property Values,lblTotalBldgBPP,,label,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,pnliInsuredValuesItem, COP Insured Values,,txtYear3,CpPf3YrSmYear3,TextBox,,4," 0-9,.",,"1.) ""Enter first prior year for Total Bldg and BPP Values.""
+",,,,,
+CPPropertyInput.aspx,LobCP,pnliInsuredValuesItem, COP Insured Values,,txtYear3PV,CpPf3YrSmYear3Values,TextBox,,10," 0-9,.",,"1.) ""Enter first prior year for Total Bldg and BPP Values.""
+",,,,,
+CPPropertyInput.aspx,LobCP,pnliInsuredValuesItem, COP Insured Values,,txtYear2,CpPf3YrSmYear2,TextBox,,4," 0-9,.",,"1.) ""Enter second prior year for Total Bldg and BPP Values.""
+",,,,,
+CPPropertyInput.aspx,LobCP,pnliInsuredValuesItem, COP Insured Values,,txtYear2PV,CpPf3YrSmYear2Values,TextBox,,10," 0-9,.",,"1.) ""Enter second prior year for Total Bldg and BPP Values.""
+",,,,,
+CPPropertyInput.aspx,LobCP,pnliInsuredValuesItem, COP Insured Values,,txtYear1,CpPf3YrSmYear1,TextBox,,4," 0-9,.",,"1.) ""Enter third prior year for Total Bldg and BPP Values.""
+",,,,,
+CPPropertyInput.aspx,LobCP,pnliInsuredValuesItem, COP Insured Values,,txtYear1PV,CpPf3YrSmYear1Values,TextBox,,10," 0-9,.",,"1.) ""Enter third prior year for Total Bldg and BPP Values.""
+",,,,,
+CPPropertyInput.aspx,LobCP,pnliInsuredValuesItem, COP Insured Values,Total 3-Year Insured Values,lbltotal,,label,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,pnliInsuredValuesItem, COP Insured Values,,txtYearPVTotal,CpPf3YrSmTotal3YearValues,TextBox,,10," 0-9,.",,"1.) "" ""
+",,,,,
+CPPropertyInput.aspx,LobCP,pnliInsuredValuesItem, COP Insured Values,Losses within the past 3 years?,lblloswth3yrs,,label,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,pnliInsuredValuesItem, COP Insured Values,,chk3YearLoss,,CheckBox,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,pnliDeductibleType, Deductible Type,Total Gross Loss,lblTotalGrossLoss,,label,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,pnliDeductibleType, Deductible Type,,txtYearTotal,,TextBox,,10," 0-9,.",,"1.) "" ""
+",,,,,
+CPPropertyInput.aspx,LobCP,pnliDeductibleType, Deductible Type,Total 3-Year Net Normal Losses,lblTotal3YearNormalLoss,,label,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,pnliDeductibleType, Deductible Type,,txtTtlNrmLoss,CpPf3YrTtlNrmLoss,TextBox,,10,,,,,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledPerils, Multiple Deductible,All Other covered perils not listed below,chkCpPfMltDedSPrlAllOth,CpPfMltDedSPrlAllOthInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledPerils, Multiple Deductible,%,txtCpPfMltDedSPrlAllOthPct,,TextBox,,2,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledPerils, Multiple Deductible,$,txtCpPfMltDedSPrlAllOthAmt,,TextBox,,8,,,,,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledPerils, Multiple Deductible,Breakage of Glass,chkCpPfMltDedSPrlBrkg,"1.)CpPfMltDedSPrlBrkgInd
+2.)CpPfMltDedSPrlBrkgPct
+3.)CpPfMltDedSPrlBrkgAmt",CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledPerils, Multiple Deductible,,ddlCpPfMltDedSPrlBrkgPct,CpPfMltDedSPrlBrkgPct,DropDownList,,,,,"1.) ""Please select Breakage of Glass Percentage.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledPerils, Multiple Deductible,""" ' ""$",ddlCpPfMltDedSPrlBrkgAmt,CpPfMltDedSPrlBrkgAmt,DropDownList,,,,,"1.) ""Please select Breakage of Glass Minimum Deductible.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledPerils, Multiple Deductible,Hail,chkCpPfMltDedSPrlHail,"1.)CpPfMltDedSPrlHailInd
+2.)CpPfMltDedSPrlHailPct
+3.)CpPfMltDedSPrlHailAmt",CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledPerils, Multiple Deductible,,ddlCpPfMltDedSPrlHailPct,CpPfMltDedSPrlHailPct,DropDownList,,,,,"1.) ""Please select Hail Percentage.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledPerils, Multiple Deductible,""" ' ""$",ddlCpPfMltDedSPrlHailAmt,CpPfMltDedSPrlHailAmt,DropDownList,,,,,"1.) ""Please select Hail Minimum Deductible.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledPerils, Multiple Deductible,Lightning,chkCpPfMltDedSPrlLight,"1.)CpPfMltDedSPrlLghtngInd
+2.)CpPfMltDedSPrlLghtngPct
+3.)CpPfMltDedSPrlLghtngAmt",CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledPerils, Multiple Deductible,,ddlCpPfMltDedSPrlLightPct,CpPfMltDedSPrlLghtngPct,DropDownList,,,,,"1.) ""Please select Lighting Percentage.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledPerils, Multiple Deductible,""" ' ""$",ddlCpPfMltDedSPrlLightAmt,CpPfMltDedSPrlLghtngAmt,DropDownList,,,,,"1.) ""Please select Lighting Percentage.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledPerils, Multiple Deductible,Wind &&amp; Hail,chkCpPfMltDedSPrlWindHail,"1.)CpPfMltDedSPrlWndHailInd
+2.)CpPfMltDedSPrlWndHailPct
+3.)CpPfMltDedSPrlWndHailAmt",CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledPerils, Multiple Deductible,,ddlCpPfMltDedSPrlWindHailPct,CpPfMltDedSPrlWndHailPct,DropDownList,,,,,"1.) ""Please select Wind & Hail Percentage.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledPerils, Multiple Deductible,""" ' ""$",ddlCpPfMltDedSPrlWindHailAmt,CpPfMltDedSPrlWndHailAmt,DropDownList,,,,,"1.) ""Please select Wind & Hail Percentage.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledPerils, Multiple Deductible,Wind,chkCpPfMltDedSPrlWind,"1.)CpPfMltDedSPrlWindInd
+2.)CpPfMltDedSPrlWindPct
+3.)CpPfMltDedSPrlWindAmt",CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledPerils, Multiple Deductible,,ddlCpPfMltDedSPrlWindPct,CpPfMltDedSPrlWindPct,DropDownList,,,,,"1.) ""Please select Wind Percentage.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledPerils, Multiple Deductible,""" ' ""$",ddlCpPfMltDedSPrlWindAmt,CpPfMltDedSPrlWindAmt,DropDownList,,,,,"1.) ""Please select Wind Minimum Deductible.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledPerils, Multiple Deductible,Theft,chkCpPfMltDedSPrlTheft,"1.)CpPfMltDedSPrlTheftInd
+2.)CpPfMltDedSPrlTheftPct
+3.)CpPfMltDedSPrlTheftAmt",CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledPerils, Multiple Deductible,,ddlCpPfMltDedSPrlTheftPct,CpPfMltDedSPrlTheftPct,DropDownList,,,,,"1.) ""Please select Theft Percentage.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledPerils, Multiple Deductible,""" ' ""$",ddlCpPfMltDedSPrlTheftAmt,CpPfMltDedSPrlTheftAmt,DropDownList,,,,,"1.) ""Please select Wind Minimum Deductible.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,All Other covered locations and Property not listed below,chkCpPfMltDedSLocAll,CpPfMltDedSLocAllOthInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocAllOthPct,,DropDownList,,,,,"1.) ""Please select All other covered perils not listed below percentage.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocAllOthAmt,,DropDownList,,,,,"1.) ""Please enter in Multiple Deductible-Schedule Locations Alll Other Covered locations Deductible.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Building,chkCpPfMltDedSLocBldg,CpPfMltDedSLocBldgInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocBldgPct,CpPfMltDedSLocBldgPct,DropDownList,,,,,"1.) ""Please select Building Percentage.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocBldgAmt,CpPfMltDedSLocBldgAmt,DropDownList,,,,,"1.) ""Please enter in Multiple Deductible-Schedule Locations Building Deductible.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Business Personal Property,chkCpPfMltDedSLocBPP,CpPfMltDedSLocBPPInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocBPPPct,CpPfMltDedSLocBPPPct,DropDownList,,,,,"1.) ""Please select Building Percentage.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocBPPAmt,CpPfMltDedSLocBPPAmt,DropDownList,,,,,"1.) ""Please enter in Multiple Deductible-Schedule Locations Building Deductible.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Fine Arts,chkCpPfMltDedSLocFinArts,CpPfMltDedSLocFinArtsInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocFinArtsPct,CpPfMltDedSLocFinArtsPct,DropDownList,,,,,"1.) ""Please select Building Percentage.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocFinArtsAmt,CpPfMltDedSLocFinArtsAmt,DropDownList,,,,,"1.) ""Please enter in Multiple Deductible-Schedule Locations Building Deductible.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Furniture Fixtures,chkCpPfMltDedSLocFntrFxtrs,CpPfMltDedSLocFntrFxtrsInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocFntrFxtrsPct,CpPfMltDedSLocFntrFxtrsPct,DropDownList,,,,,"1.) ""Please select Building Percentage.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocFntrFxtrsAmt,CpPfMltDedSLocFntrFxtrsAmt,DropDownList,,,,,"1.) ""Please enter in Multiple Deductible-Schedule Locations Building Deductible.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Mobile Equipments,chkCpPfMltDedSLocMobEquip,CpPfMltDedSLocMobEquipInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocMobEquipPct,CpPfMltDedSLocMobEquipPct,DropDownList,,,,,"1.) ""Please select Building Percentage.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocMobEquipAmt,CpPfMltDedSLocMobEquipAmt,DropDownList,,,,,"1.) ""Please enter in Multiple Deductible-Schedule Locations Building Deductible.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Personal Prop of Others,chkCpPfMltDedSLocPrsPrpPth,CpPfMltDedSLocPrsPrpOthInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocPrsPrpPthPct,CpPfMltDedSLocPrsPrpOthPct,DropDownList,,,,,"1.) ""Please select Building Percentage.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocPrsPrpPthAmt,CpPfMltDedSLocPrsPrpOthAmt,DropDownList,,,,,"1.) ""Please enter in Multiple Deductible-Schedule Locations Building Deductible.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Precious Metals,chkCpPfMltDedSLocPrcsMtls,"1.)CpPfMltDedSLocPrcsMtlsInd
+2.)CpPfMltDedSLocPrcsMtlsAmt",CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocPrcsMtlsPct,CpPfMltDedSLocPrcsMtlsPct,DropDownList,,,,,"1.) ""Please select Building Percentage.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocPrcsMtlsAmt,CpPfMltDedSLocPrcsMtlsAmt,DropDownList,,,,,"1.) ""Please enter in Multiple Deductible-Schedule Locations Building Deductible.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Stock,chkCpPfMltDedSLocStock,CpPfMltDedSLocStockInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocStockPct,CpPfMltDedSLocStockPct,DropDownList,,,,,"1.) ""Please select Building Percentage.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocStockAmt,CpPfMltDedSLocStockAmt,DropDownList,,,,,"1.) ""Please enter in Multiple Deductible-Schedule Locations Building Deductible.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Vehicles,chkCpPfMltDedSLocVhcls,CpPfMltDedSLocVhclsInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocVhclsPct,CpPfMltDedSLocVhclsPct,DropDownList,,,,,"1.) ""Please select Building Percentage.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocVhclsAmt,CpPfMltDedSLocVhclsAmt,DropDownList,,,,,"1.) ""Please enter in Multiple Deductible-Schedule Locations Building Deductible.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Off Premises Utility Svc Interruption,chkCpPfMltDedSLocOPUSS,CpPfMltDedSLocOPUSvcInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocOPUSSPct,,DropDownList,,,,,"1.) ""Select Of Premises Utility Svc Interruption  Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocOPUSSAmt,,DropDownList,,,,,"1.) ""Select Of Premises Utility Svc Interruption  Deductible Amount.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Computers,chkCpPfMltDedSLocComputer,CpPfMltDedSLocComputerInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocComputerPct,,DropDownList,,,,,"1.) ""Select Of Computer Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocComputerAmt,,DropDownList,,,,,"1.) ""Select Of Computer Deductible Amount.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Employee Theft Incl. Employee Ben Plans,chkCpPfMltDedSLocEmpTheft,CpPfMltDedSLocEmpTheftInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocEmpTheftPct,,DropDownList,,,,,"1.) ""Select Of Emlpoyee Theft Incl. Empoyee Ben Plans Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocEmpTheftAmt,,DropDownList,,,,,"1.) ""Select Of Emlpoyee Theft Incl. Empoyee Ben Plans Deductible Amount.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Forgery or Alterations,chkCpPfMltDedSLocForgAlter,CpPfMltDedSLocForgAtlerInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocForgAlterPct,,DropDownList,,,,,"1.) ""Select Of Forgery or Alterations Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocForgAlterAmt,,DropDownList,,,,,"1.) ""Select Of Forgery or Alterations Deductible Amount.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Forged Credit Card Written Instrument,chkCpPfMltDedSLocForgCCWI,CpPfMltDedSLocForgCCWIInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocForgCCWIPct,,DropDownList,,,,,"1.) ""Select Of Forged Credit Card Written Instrument Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocForgCCWIAmt,,DropDownList,,,,,"1.) ""Select Of Forged Credit Card Written Instrument Deductible Amount.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Money and Securities - Inside the Premises,chkCpPfMltDedSLocMSInside,CpPfMltDedSLocMSInsideInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocMSInsidePct,,DropDownList,,,,,"1.) ""Select Of Money and Securities - Inside the Premises Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocMSInsideAmt,,DropDownList,,,,,"1.) ""Select Of Money and Securities - Inside the Premises Deductible Amount.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Money and Securities - Outside the Premises,chkCpPfMltDedSLocMSOutside,CpPfMltDedSLocMSOutsideInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocMSOutsidePct,,DropDownList,,,,,"1.) ""Select Of Money and Securities - Outside the Premises Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocMSOutsideAmt,,DropDownList,,,,,"1.) ""Select Of Money and Securities - Outside the Premises Deductible Amount.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Money Orders &&amp; Counterfeit Paper Currency,chkCpPfMltDedSLocMOCPC,CpPfMltDedSLocMOCPCInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocMOCPCPct,,DropDownList,,,,,"1.) ""Select Of Money Orders & Counterfeit Paper Currency Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocMOCPCAmt,,DropDownList,,,,,"1.) ""Select Of Money Orders & Counterfeit Paper Currency Deductible Amount.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Members &&amp; Guests Property,chkCpPfMltDedSLocMGProperty,CpPfMltDedSLocMGPropertyInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocMGPropertyPct,,DropDownList,,,,,"1.) ""Select Of Members & Guests Property Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocMGPropertyAmt,,DropDownList,,,,,"1.) ""Select Of Members & Guests Property Deductible Amount.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Non-Owned Detached Trailers,chkCpPfMltDedSLocDetachTrail,CpPfMltDedSLocNODetachTrailInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocDetachTrailPct,,DropDownList,,,,,"1.) ""Select Of Non-Owned Detached Trailers Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocDetachTrailAmt,,DropDownList,,,,,"1.) ""Select Of Non-Owned Detached Trailers Deductible Amount.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Ornamental Garden &&amp; Landscape Displays,chkCpPfMltDedSLocOGLD,CpPfMltDedSLocOGLDInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocOGLDPct,,DropDownList,,,,,"1.) ""Select Of Ornamental Garden & Landscape Displays Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocOGLDAmt,,DropDownList,,,,,"1.) ""Select Of Ornamental Garden & Landscape Displays Deductible Amount.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Outdoor Storage Sheds,chkCpPfMltDedSLocOutDoorSS,CpPfMltDedSLocOutDoorSSInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocOutDoorSSPct,,DropDownList,,,,,"1.) ""Select Of Outdoor Storage Sheds Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocOutDoorSSAmt,,DropDownList,,,,,"1.) ""Select Of Outdoor Storage Sheds Deductible Amount.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Outdoor Light Posts,chkCpPfMltDedSLocODLightPost,CpPfMltDedSLocODLightPostInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocODLightPostPct,,DropDownList,,,,,"1.) ""Select Of Outdoor Light Posts Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocODLightPostAmt,,DropDownList,,,,,"1.) ""Select Of Outdoor Light Posts Deductible Amount.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Personal Effects,chkCpPfMltDedSLocPersonEff,CpPfMltDedSLocPersonEffInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocPersonEffPct,,DropDownList,,,,,"1.) ""Select Of Personal Effects Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocPersonEffAmt,,DropDownList,,,,,"1.) ""Select Of Personal Effects Deductible Amount.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Property Off Premises,chkCpPfMltDedSLocPropOffPrem,CpPfMltDedSLocPropOffPremInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocPropOffPremPct,,DropDownList,,,,,"1.) ""Select Property Off Premises Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocPropOffPremAmt,,DropDownList,,,,,"1.) ""Select Property Off Premises Deductible Amount.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Accounts Receivables,chkCpPfMltDedSLocAcctReceive,CpPfMltDedSLocAcctReceiveInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocAcctReceivePct,,DropDownList,,,,,"1.) ""Select Of Accounts Receivables Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocAcctReceiveAmt,,DropDownList,,,,,"1.) ""Select Of Accounts Receivables Deductible Amount.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Virus and Hacking Coverage,chkCpPfMltDedSLocVirusHack,CpPfMltDedSLocVirusHackInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocVirusHackPct,,DropDownList,,,,,"1.) ""Select Premises Utility Svc Interruption  Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocVirusHackAmt,,DropDownList,,,,,"1.) ""Select Premises Utility Svc Interruption  Deductible Amount.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Off Premises Computers,chkCpPfMltDedSLocOffPremComp,CpPfMltDedSLocOffPremCompInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocOffPremCompPct,,DropDownList,,,,,"1.) ""Select Off Premises Computers Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocOffPremCompAmt,,DropDownList,,,,,"1.) ""Select Off Premises Computers Deductible Amount.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Property In Transit,chkCpPfMltDedSLocPropTransit,CpPfMltDedSLocPropTransitInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocPropTransitPct,,DropDownList,,,,,"1.) ""Select Property In Transit Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocPropTransitAmt,,DropDownList,,,,,"1.) ""Select Property In Transit Deductible Amount.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Property on Exhibition,chkCpPfMltDedSLocPropExhibit,CpPfMltDedSLocPropExhibitInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocPropExhibitPct,,DropDownList,,,,,"1.) ""Select Property on Exhibition Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocPropExhibitAmt,,DropDownList,,,,,"1.) ""Select Property on Exhibition Deductible Amount.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Sales Representative Samples,chkCpPfMltDedSLocSRSample,CpPfMltDedSLocSRSampleInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocSRSamplePct,,DropDownList,,,,,"1.) ""Select Of Sales Representative Samples Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocSRSampleAmt,,DropDownList,,,,,"1.) ""Select Of Sales Representative Samples Deductible Amount.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Software Storage,chkCpPfMltDedSLocSoftwareStorage,CpPfMltDedSLocSoftwareStorageInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocSoftwareStoragePct,,DropDownList,,,,,"1.) ""Select Software Storage Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocSoftwareStorageAmt,,DropDownList,,,,,"1.) ""Select Software Storage Deductible Amount.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Valuable Papers,chkCpPfMltDedSLocValuePapers,CpPfMltDedSLocValuePapersInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocValuePapersPct,,DropDownList,,,,,"1.) ""Select Valuable Papers Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocValuePapersAmt,,DropDownList,,,,,"1.) ""Select Valuable Papers Deductible Amount.""
+",,,,,
+,LobCP,,,,,,,,,,,,,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Other,chkCpPfMltDedSLocOther,CpPfMltDedSLocOtherInd,CheckBox,,,,,"1.) String.Empty
+",,,Y,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,,ddlCpPfMltDedSLocOtherPct,,DropDownList,,,,,"1.) ""Select Other Deductible Amount.""
+",,"1.)Proc name: uspSelect_CP_Percatge_Loss_Deductible
+,Key name:PFPercent,Paramater:"," Help_Value
+",,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,""" ' ""$",ddlCpPfMltDedSLocOtherAmt,,DropDownList,,,,,"1.) ""Select Other Deductible Amount.""
+",,,,,
+CPPropertyInput.aspx,LobCP,splScheduledLocationsandProperty, Multiple Deductible - Scheduled Locations and Property,Description,txtCpPfMltDedSLocOtherDesc,,TextBox,,40,,,"1.) ""Select Other Deductible Amount.""
+",,,,,

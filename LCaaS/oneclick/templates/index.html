@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .GFG {
+            background-color: white;
+            border: 2px solid black;
+            color: green;
+            padding: 5px 10px;
+            text-align: center;
+            display: inline-block;
+            font-size: 20px;
+            margin: 10px 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg fixed-top" id="bar" style="background-color:black;">
+<!--        <img src="logo2.png" alt="Tech Mahindra" width="140px"/>-->
+        <img src="{{url_for('static', filename='logo2.png')}}" alt="Tech Mahindra" width="140px"/>
+        <h2 style="color:red;"> Lcaas one click</h2>
+</nav>
+    <form method="post" style="color:blue;">
+            <label>Select Instances</label><br><br>
+<!--            <input type="text" placeholder="enter cobol database" id="dbcobol" name="dbcobol" ><br>-->
+            <input type="checkbox" value="cobol" id="cobol" name="cobol">
+            <label>cobol</label>
+            <br>
+<!--             <input type="text" placeholder="enter natural database" id="dbnatural" name="dbnatural">-->
+<!--            <br>-->
+            <input type="checkbox" value="natural" name="natural" id="natural">
+            <label>natural</label>
+            <br>
+<!--            <input type="text" placeholder="enter java database" id="dbjava" name="dbjava">-->
+<!--            <br>-->
+            <input type="checkbox" value="java" id="java" name="java">
+            <label>java</label>
+            <br>
+<!--            <input type="text" placeholder="enter vb6 database" id="dbvb6" name="dbvb6">-->
+<!--            <br>-->
+            <input type="checkbox" value="vb6" id="vb6" name="vb6">
+            <label>vb6</label>
+            <br>
+<!--            <input type="text" placeholder="enter vbnet database" id="dbvbnet" name="dbvbnet">-->
+<!--            <br>-->
+            <input type="checkbox" value="vbnet" name="vbnet" id="vbnet">
+            <label>vbnet</label>
+            <br>
+<!--            <input type="text" placeholder="enter plsql database" id="dbplsql" name="dbplsql">-->
+<!--            <br>-->
+            <input type="checkbox" value="plsql" name="plsql" id="plsql">
+            <label>plsql</label><br><br>
+
+<!--        <button>-->
+<!--            Run-->
+<!--        </button>-->
+<!--    <a  typehref='/log_stream'>Run </a>-->
+            <button type="submit" id="run" style="color:blue; background-color:yellow;">Run</button>
+<!--            <input type="button" onclick="window.location.href = '/log_stream'" value="view log"/>-->
+
+<!--            <a href="{{url_for('stream', var1='I-am-var1') }}">First View Function</a>-->
+    </form>
+</body>
+
+<!doctype html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <iframe frameborder="0" noresize="noresize"
+     style='background: transparent; width: 100%; height:100%;' src="{{ url_for('stream')}}"></iframe>
+    </div>
+</body>
+
+</html>

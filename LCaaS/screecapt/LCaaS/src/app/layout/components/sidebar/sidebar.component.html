@@ -1,0 +1,1336 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
+    <!-- UPS -->
+    <div class="list-group" *ngIf="ifUPS">
+        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+            <span>{{ 'Dashboard' }}</span>
+        </a>
+        <a [routerLink]="['/masterinvApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Master Inventory' }}</span>
+        </a>
+        <a [routerLink]="['/xrefApplicationReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-th-list"></i>&nbsp;
+            <span>{{ 'X-Ref Report' }}</span>
+        </a>
+        <a [routerLink]="['/formsApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-edit"></i>&nbsp;
+            <span>{{ 'CRUD' }}</span>
+        </a>
+        <!-- <a [routerLink]="['/glossary']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-list"></i>&nbsp;
+            <span>{{ 'Glossary' }}</span>
+        </a> -->
+        <a [routerLink]="['/glossary-application']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-list"></i>&nbsp;
+            <span>{{ 'Glossary' }}</span>
+        </a>
+		<a [routerLink]="['/spiderchartApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+			<i class="fa fa-fw fa-table"></i>&nbsp;
+			<span>{{ 'Spider' }}</span>
+		</a>
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass2('pages2')">
+                <i id="expandMinimize2" class="fa fa-plus"></i>&nbsp;
+                <span>{{ 'Flow Diagrams' }}</span>
+            </a> 
+            <li class="nested" [class.expand]="showMenu2 === 'pages2'">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLink]="['/callChainApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-th-list"></i>&nbsp;
+                            <span>{{'Call Chain'}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/controlFlowApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-fw fa-table"></i>&nbsp;
+                            <span>{{'Control Flow'}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/programprocessflowExt']" title="Program Process Flow" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-sitemap fa-rotate-270"></i>
+                            <span>{{'Program Process Flow'}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li> 
+         </div>
+        <a [routerLink]="['/sankey']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-area-chart"></i>
+            <span>{{'Sankey Diagram'}}</span>
+        </a>
+        <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass1('pages1')">
+                    <i id="expandMinimize1" class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'Business Rule Extraction' }}</span>
+                </a> 
+                <li class="nested" [class.expand]="showMenu1 === 'pages1'">
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['/bre']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-desktop"></i>
+                                <span>{{ 'Detailed Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/brereport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-list"></i>
+                                <span>{{ 'Rules report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/brerule']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-table"></i>
+                                <span>{{ 'Rule Category' }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
+             </div>
+             <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass3('pages3')">
+                    <i id="expandMinimize3" class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'CICS Screen Report' }}</span>
+                </a> 
+                <li class="nested" [class.expand]="showMenu3 === 'pages3'">
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['/cicsscreenApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-desktop"></i>
+                                <span>{{ 'Screen Definition' }}</span>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a [routerLink]="['/cicsrulesApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-table"></i>
+                                <span>{{ 'Validation Rules' }}</span>
+                            </a>
+                        </li> -->
+                        <li>
+                            <a [routerLink]="['/cicsxrefApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-list"></i>
+                                <span>{{ 'CICS X-Ref' }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
+            </div>
+            <a [routerLink]="['/impactReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-th-list"></i>&nbsp;
+                <span>{{ 'Variable Impact Report' }}</span>
+            </a>
+			<a [routerLink]="['/missingcompApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-fw fa-table"></i>&nbsp;
+				<span>{{ 'Missing Component' }}</span>
+			</a>
+        <a [routerLink]="['/commentedlinesApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-th-list"></i>
+            <span>{{ 'Commented Lines Report' }}</span>
+        </a>
+        <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass('pages')">
+                    <i id="expandMinimize" class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'Technical Debt Report' }}</span>
+                </a> 
+                <li class="nested" [class.expand]="showMenu === 'pages'">
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['/orphanApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-th-list"></i>
+                                <span>{{ 'Orphan Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/dropimpactApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-table"></i>
+                                <span>{{ 'Drop Impact Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/deadparaReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-list-ul"></i>
+                                <span>{{ 'Dead Para Report' }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
+             </div> 
+			<a [routerLink]="['/userguide']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-user-circle-o "></i>&nbsp;
+				<span>{{ 'User Guide' }}</span>
+			</a>
+    </div>
+    <!-- BSNF -->
+    <div class="list-group" *ngIf="ifBSNF">
+        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+            <span>{{ 'Dashboard' }}</span>
+        </a>
+        <a [routerLink]="['/masterinvApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Master Inventory' }}</span>
+        </a>
+        <a [routerLink]="['/xrefApplicationReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-th-list"></i>&nbsp;
+            <span>{{ 'X-Ref Report' }}</span>
+        </a>
+        <a [routerLink]="['/formsApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-edit"></i>&nbsp;
+            <span>{{ 'CRUD' }}</span>
+        </a>
+        <a [routerLink]="['/glossary-application']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-list"></i>&nbsp;
+            <span>{{ 'Glossary' }}</span>
+        </a>
+        <a [routerLink]="['/spiderchartApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Spider' }}</span>
+        </a>
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass2('pages2')">
+                <i id="expandMinimize2" class="fa fa-plus"></i>&nbsp;
+                <span>{{ 'Flow Diagrams' }}</span>
+            </a> 
+            <li class="nested" [class.expand]="showMenu2 === 'pages2'">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLink]="['/callChainApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-th-list"></i>&nbsp;
+                            <span>{{'Call Chain'}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/controlFlowApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-fw fa-table"></i>&nbsp;
+                            <span>{{'Control Flow'}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/programprocessflowExt']" title="Program Process Flow" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-sitemap fa-rotate-270"></i>
+                            <span>{{'Program Process Flow'}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li> 
+            </div>
+        <a [routerLink]="['/sankey']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-area-chart"></i>
+            <span>{{'Sankey Diagram'}}</span>
+        </a>
+        <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass1('pages1')">
+                    <i id="expandMinimize1" class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'Business Rule Extraction' }}</span>
+                </a> 
+                <li class="nested" [class.expand]="showMenu1 === 'pages1'">
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['/bre']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-desktop"></i>
+                                <span>{{ 'Detailed Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/brereport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-list"></i>
+                                <span>{{ 'Rules report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/brerule']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-table"></i>
+                                <span>{{ 'Rule Category' }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
+                </div>
+            <a [routerLink]="['/impactReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-th-list"></i>&nbsp;
+                <span>{{ 'Variable Impact Report' }}</span>
+            </a>
+            <!-- <a [routerLink]="['/cicsscreenApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-fw fa-desktop"></i>
+                <span>{{ 'Screen Definition' }}</span>
+            </a> -->
+            <a [routerLink]="['/missingcompApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-fw fa-table"></i>&nbsp;
+                <span>{{ 'Missing Component' }}</span>
+            </a>
+        <a [routerLink]="['/commentedlinesApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-th-list"></i>
+            <span>{{ 'Commented Lines Report' }}</span>
+        </a>
+        <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass('pages')">
+                    <i id="expandMinimize" class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'Technical Debt Report' }}</span>
+                </a> 
+                <li class="nested" [class.expand]="showMenu === 'pages'">
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['/orphanApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-th-list"></i>
+                                <span>{{ 'Orphan Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/dropimpactApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-table"></i>
+                                <span>{{ 'Drop Impact Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/deadparaReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-list-ul"></i>
+                                <span>{{ 'Dead Para Report' }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
+                </div> 
+            <a [routerLink]="['/userguide']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-user-circle-o "></i>&nbsp;
+                <span>{{ 'User Guide' }}</span>
+            </a>
+    </div>
+	<!-- TW -->
+    <div class="list-group" *ngIf="ifTW">
+        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+            <span>{{ 'Dashboard' }}</span>  
+        </a>
+        <a [routerLink]="['/masterinvApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Master Inventory' }}</span>
+        </a>
+        <a [routerLink]="['/xrefApplicationReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-th-list"></i>&nbsp;
+            <span>{{ 'X-Ref Report' }}</span>
+        </a>
+        <a [routerLink]="['/formsApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-edit"></i>&nbsp;
+            <span>{{ 'CRUD' }}</span>
+        </a>
+         <a [routerLink]="['/glossaryXrefTW']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-list"></i>&nbsp;
+            <span>{{ 'Glossary' }}</span>
+         </a> 
+		<a [routerLink]="['/spiderchartApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+			<i class="fa fa-fw fa-table"></i>&nbsp;
+			<span>{{ 'Spider' }}</span>
+		</a>
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass2('pages2')">
+                <i id="expandMinimize2" class="fa fa-plus"></i>&nbsp;
+                <span>{{ 'Flow Diagrams' }}</span>
+            </a> 
+            <li class="nested" [class.expand]="showMenu2 === 'pages2'">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLink]="['/callChainApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-th-list"></i>&nbsp;
+                            <span>{{'Call Chain'}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/controlFlowApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-fw fa-table"></i>&nbsp;
+                            <span>{{'Control Flow'}}</span>
+                        </a>
+                    </li>
+                    <li>
+						<a [routerLink]="['/programprocessflow']" title="Program Process Flow" [routerLinkActive]="['router-link-active']" class="list-group-item">
+							<i class="fa fa-sitemap fa-rotate-270"></i>
+							<span>{{'Program Process Flow'}}</span>
+						</a>
+                    </li>
+                </ul>
+            </li> 
+         </div>
+        <a [routerLink]="['/sankey']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-area-chart"></i>
+            <span>{{'Sankey Diagram'}}</span>
+        </a>
+        <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass1('pages1')">
+                    <i id="expandMinimize1" class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'Business Rule Extraction' }}</span>
+                </a> 
+                <li class="nested" [class.expand]="showMenu1 === 'pages1'">
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['/bre-x-ref']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-desktop"></i>
+                                <span>{{ 'Detailed Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/brereport-x-ref']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-list"></i>
+                                <span>{{ 'Rules report' }}</span>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a [routerLink]="['/brerule']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-table"></i>
+                                <span>{{ 'Rule Category' }}</span>
+                            </a>
+                        </li> -->
+                    </ul>
+                </li> 
+             </div>
+            <a [routerLink]="['/impactReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-th-list"></i>&nbsp;
+                <span>{{ 'Variable Impact Report' }}</span>
+            </a>
+			<a [routerLink]="['/missingcompApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-fw fa-table"></i>&nbsp;
+				<span>{{ 'Missing Component' }}</span>
+			</a>
+			<a [routerLink]="['/commentedlinesApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-th-list"></i>
+				<span>{{ 'Commented Lines Report' }}</span>
+			</a>
+			<div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass('pages')">
+                    <i id="expandMinimize" class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'Technical Debt Report' }}</span>
+                </a> 
+                <li class="nested" [class.expand]="showMenu === 'pages'">
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['/orphanApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-th-list"></i>
+                                <span>{{ 'Orphan Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/dropimpactApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-table"></i>
+                                <span>{{ 'Drop Impact Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/deadparaReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-list-ul"></i>
+                                <span>{{ 'Dead Para Report' }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
+             </div> 
+        <a [routerLink]="['/userguide']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-user-circle-o "></i>&nbsp;
+            <span>{{ 'User Guide' }}</span>
+        </a>
+    </div>
+    <!-- TW - IM -->
+    <div class="list-group" *ngIf="ifTWIM">
+        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+            <span>{{ 'Dashboard' }}</span>  
+        </a>
+        <a [routerLink]="['/masterinvApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Master Inventory' }}</span>
+        </a>
+        <a [routerLink]="['/xrefApplicationReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-th-list"></i>&nbsp;
+            <span>{{ 'X-Ref Report' }}</span>
+        </a>
+        <a [routerLink]="['/formsApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-edit"></i>&nbsp;
+            <span>{{ 'CRUD' }}</span>
+        </a>
+         <a [routerLink]="['/glossaryXrefTW']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-list"></i>&nbsp;
+            <span>{{ 'Glossary' }}</span>
+         </a> 
+		<a [routerLink]="['/spiderchartApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+			<i class="fa fa-fw fa-table"></i>&nbsp;
+			<span>{{ 'Spider' }}</span>
+		</a>
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass2('pages2')">
+                <i id="expandMinimize2" class="fa fa-plus"></i>&nbsp;
+                <span>{{ 'Flow Diagrams' }}</span>
+            </a> 
+            <li class="nested" [class.expand]="showMenu2 === 'pages2'">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLink]="['/callChainApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-th-list"></i>&nbsp;
+                            <span>{{'Call Chain'}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/controlFlowApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-fw fa-table"></i>&nbsp;
+                            <span>{{'Control Flow'}}</span>
+                        </a>
+                    </li>
+                    <li>
+						<a [routerLink]="['/programprocessflow']" title="Program Process Flow" [routerLinkActive]="['router-link-active']" class="list-group-item">
+							<i class="fa fa-sitemap fa-rotate-270"></i>
+							<span>{{'Program Process Flow'}}</span>
+						</a>
+                    </li>
+                </ul>
+            </li> 
+         </div>
+        <a [routerLink]="['/sankey']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-area-chart"></i>
+            <span>{{'Sankey Diagram'}}</span>
+        </a>
+        <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass1('pages1')">
+                    <i id="expandMinimize1" class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'Business Rule Extraction' }}</span>
+                </a> 
+                <li class="nested" [class.expand]="showMenu1 === 'pages1'">
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['/bre']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-desktop"></i>
+                                <span>{{ 'Detailed Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/brereport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-list"></i>
+                                <span>{{ 'Rules report' }}</span>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a [routerLink]="['/brerule']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-table"></i>
+                                <span>{{ 'Rule Category' }}</span>
+                            </a>
+                        </li> -->
+                    </ul>
+                </li> 
+             </div>
+            <a [routerLink]="['/impactReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-th-list"></i>&nbsp;
+                <span>{{ 'Variable Impact Report' }}</span>
+            </a>
+			<a [routerLink]="['/missingcompApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-fw fa-table"></i>&nbsp;
+				<span>{{ 'Missing Component' }}</span>
+			</a>
+			<a [routerLink]="['/commentedlinesApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-th-list"></i>
+				<span>{{ 'Commented Lines Report' }}</span>
+			</a>
+			<div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass('pages')">
+                    <i id="expandMinimize" class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'Technical Debt Report' }}</span>
+                </a> 
+                <li class="nested" [class.expand]="showMenu === 'pages'">
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['/orphanApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-th-list"></i>
+                                <span>{{ 'Orphan Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/dropimpactApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-table"></i>
+                                <span>{{ 'Drop Impact Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/deadparaReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-list-ul"></i>
+                                <span>{{ 'Dead Para Report' }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
+             </div> 
+        <a [routerLink]="['/userguide']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-user-circle-o "></i>&nbsp;
+            <span>{{ 'User Guide' }}</span>
+        </a>
+    </div>
+	<!-- Prod -->
+	<div class="list-group" *ngIf="ifProd">
+        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+            <span>{{ 'Dashboard' }}</span>
+        </a>
+        <a [routerLink]="['/masterinvApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Master Inventory' }}</span>
+        </a>
+        <a [routerLink]="['/xrefApplicationReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-th-list"></i>&nbsp;
+            <span>{{ 'X-Ref Report' }}</span>
+        </a>
+        <a [routerLink]="['/formsApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-edit"></i>&nbsp;
+            <span>{{ 'CRUD' }}</span>
+        </a>
+        <a [routerLink]="['/glossary']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-list"></i>&nbsp;
+            <span>{{ 'Glossary' }}</span>
+        </a>
+		<a [routerLink]="['/spiderchartApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+			<i class="fa fa-fw fa-table"></i>&nbsp;
+			<span>{{ 'Spider' }}</span>
+		</a>
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass2('pages2')">
+                <i id="expandMinimize2" class="fa fa-plus"></i>&nbsp;
+                <span>{{ 'Flow Diagrams' }}</span>
+            </a> 
+            <li class="nested" [class.expand]="showMenu2 === 'pages2'">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLink]="['/callChainApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-th-list"></i>&nbsp;
+                            <span>{{'Call Chain'}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/controlFlowApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-fw fa-table"></i>&nbsp;
+                            <span>{{'Control Flow'}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/programprocessflowExt']" title="Program Process Flow" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-sitemap fa-rotate-270"></i>
+                            <span>{{'Program Process Flow'}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li> 
+         </div>
+        <a [routerLink]="['/sankey']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-area-chart"></i>
+            <span>{{'Sankey Diagram'}}</span>
+        </a>
+        <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass1('pages1')">
+                    <i id="expandMinimize1" class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'Business Rule Extraction' }}</span>
+                </a> 
+                <li class="nested" [class.expand]="showMenu1 === 'pages1'">
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['/bre']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-desktop"></i>
+                                <span>{{ 'Detailed Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/brereport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-list"></i>
+                                <span>{{ 'Rules report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/brerule']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-table"></i>
+                                <span>{{ 'Rule Category' }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
+             </div>
+             <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass3('pages3')">
+                    <i id="expandMinimize3" class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'CICS Screen Report' }}</span>
+                </a> 
+                <li class="nested" [class.expand]="showMenu3 === 'pages3'">
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['/cicsscreenApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-desktop"></i>
+                                <span>{{ 'Screen Definition' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/cicsrulesApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-table"></i>
+                                <span>{{ 'Validation Rules' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/cicsxrefApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-list"></i>
+                                <span>{{ 'CICS X-Ref' }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
+            </div>
+            <a [routerLink]="['/impactReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-th-list"></i>&nbsp;
+                <span>{{ 'Variable Impact Report' }}</span>
+            </a>
+			<a [routerLink]="['/missingcompApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-fw fa-table"></i>&nbsp;
+				<span>{{ 'Missing Component' }}</span>
+			</a>
+        <a [routerLink]="['/commentedlinesApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-th-list"></i>
+            <span>{{ 'Commented Lines Report' }}</span>
+        </a>
+        <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass('pages')">
+                    <i id="expandMinimize" class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'Technical Debt Report' }}</span>
+                </a> 
+                <li class="nested" [class.expand]="showMenu === 'pages'">
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['/orphanApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-th-list"></i>
+                                <span>{{ 'Orphan Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/dropimpactApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-table"></i>
+                                <span>{{ 'Drop Impact Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/deadparaReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-list-ul"></i>
+                                <span>{{ 'Dead Para Report' }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
+             </div> 
+			<a [routerLink]="['/userguide']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-user-circle-o "></i>&nbsp;
+				<span>{{ 'User Guide' }}</span>
+			</a>
+    </div>
+    <!-- Microfocus -->
+	 <div class="list-group" *ngIf="ifMicrofocus">
+        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+            <span>{{ 'Dashboard' }}</span>  
+        </a>
+        <a [routerLink]="['/masterinv']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Master Inventory' }}</span>
+        </a>
+		<a [routerLink]="['/xrefApplicationReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-th-list"></i>&nbsp;
+            <span>{{ 'X-Ref Report' }}</span>
+        </a>
+        <a [routerLink]="['/forms']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-edit"></i>&nbsp;
+            <span>{{ 'CRUD' }}</span>
+        </a>
+        <a [routerLink]="['/spider']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Spider' }}</span>
+        </a>
+        <a [routerLink]="['/batchflow']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Batch Flow' }}</span>
+        </a>
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass2('pages2')">
+                <i id="expandMinimize2" class="fa fa-plus"></i>&nbsp;
+                <span>{{ 'Flow Diagrams' }}</span>
+            </a> 
+            <li class="nested" [class.expand]="showMenu2 === 'pages2'">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLink]="['/callChain']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-th-list"></i>&nbsp;
+                            <span>{{'Call Chain'}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/controlFlow']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-fw fa-table"></i>&nbsp;
+                            <span>{{'Control Flow'}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/components']" title="Program Process Flow" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-sitemap fa-rotate-270"></i>&nbsp;
+                            <span>{{'Program Process Flow'}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li> 
+         </div>
+        <a [routerLink]="['/bre']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-desktop"></i>&nbsp;
+            <span>{{ 'Business Rules' }}</span>
+        </a>
+        <a [routerLink]="['/missingcomp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Missing Component' }}</span>
+        </a>
+        <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass('pages')">
+                    <i id="expandMinimize" class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'Technical Debt Report' }}</span>
+                </a> 
+                <li class="nested" [class.expand]="showMenu === 'pages'">
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['/orphan']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-th-list"></i>
+                                <span>{{ 'Orphan Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/deadpara']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-list-ul"></i>
+                                <span>{{ 'Dead Para Report' }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
+             </div> 
+    </div>
+    <!-- AS400 -->
+	    <div class="list-group" *ngIf="ifAS400">
+        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+            <span>{{ 'Dashboard' }}</span>  
+        </a>
+        <a [routerLink]="['/masterinvApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Master Inventory' }}</span>
+        </a>
+        <a [routerLink]="['/xrefApplicationReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-th-list"></i>&nbsp;
+            <span>{{ 'X-Ref Report' }}</span>
+        </a>
+        <a [routerLink]="['/formsApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-edit"></i>&nbsp;
+            <span>{{ 'CRUD' }}</span>
+        </a>
+        <a [routerLink]="['/glossary']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-list"></i>&nbsp;
+            <span>{{ 'Glossary' }}</span>
+        </a>
+		<a [routerLink]="['/spiderchartApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+			<i class="fa fa-fw fa-table"></i>&nbsp;
+			<span>{{ 'Spider' }}</span>
+		</a>
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass2('pages2')">
+                <i id="expandMinimize2" class="fa fa-plus"></i>&nbsp;
+                <span>{{ 'Flow Diagrams' }}</span>
+            </a> 
+            <li class="nested" [class.expand]="showMenu2 === 'pages2'">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLink]="['/callChainApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-th-list"></i>&nbsp;
+                            <span>{{'Call Chain'}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/controlFlowApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-fw fa-table"></i>&nbsp;
+                            <span>{{'Control Flow'}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/programprocessflowExt']" title="Program Process Flow" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-sitemap fa-rotate-270"></i>
+                            <span>{{'Program Process Flow'}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li> 
+         </div>
+        <a [routerLink]="['/sankey']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-area-chart"></i>
+            <span>{{'Sankey Diagram'}}</span>
+        </a>
+        <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass1('pages1')">
+                    <i id="expandMinimize1" class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'Business Rule Extraction' }}</span>
+                </a> 
+                <li class="nested" [class.expand]="showMenu1 === 'pages1'">
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['/bre']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-desktop"></i>
+                                <span>{{ 'Detailed Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/brereport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-list"></i>
+                                <span>{{ 'Rules report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/brerule']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-table"></i>
+                                <span>{{ 'Rule Category' }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
+             </div>
+             <a [routerLink]="['/cicsscreenApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-fw fa-desktop"></i>
+                <span>{{ 'Screen Definition Report' }}</span>
+            </a>
+			<a [routerLink]="['/missingcompApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-fw fa-table"></i>&nbsp;
+				<span>{{ 'Missing Component' }}</span>
+			</a>
+			<a [routerLink]="['/commentedlinesApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-th-list"></i>
+				<span>{{ 'Commented Lines Report' }}</span>
+			</a>
+			<div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass('pages')">
+                    <i id="expandMinimize" class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'Technical Debt Report' }}</span>
+                </a> 
+                <li class="nested" [class.expand]="showMenu === 'pages'">
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['/orphanApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-th-list"></i>
+                                <span>{{ 'Orphan Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/dropimpactApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-table"></i>
+                                <span>{{ 'Drop Impact Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/deadparaReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-list-ul"></i>
+                                <span>{{ 'Dead Para Report' }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
+             </div>
+    </div>
+    <!-- Natural -->
+	<div class="list-group" *ngIf="isNatural">
+        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+            <span>{{ 'Dashboard' }}</span>  
+        </a>
+        <a [routerLink]="['/masterinvApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Master Inventory' }}</span>
+        </a>
+        <a [routerLink]="['/xrefApplicationReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-th-list"></i>&nbsp;
+            <span>{{ 'X-Ref Report' }}</span>
+        </a>
+        <a [routerLink]="['/formsApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-edit"></i>&nbsp;
+            <span>{{ 'CRUD' }}</span>
+        </a>
+        <a [routerLink]="['/glossary']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-list"></i>&nbsp;
+            <span>{{ 'Glossary' }}</span>
+        </a>
+        <a [routerLink]="['/spiderchartApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Spider' }}</span>
+        </a>
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass2('pages2')">
+                <i id="expandMinimize2" class="fa fa-plus"></i>&nbsp;
+                <span>{{ 'Flow Diagrams' }}</span>
+            </a> 
+            <li class="nested" [class.expand]="showMenu2 === 'pages2'">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLink]="['/callChainApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-th-list"></i>&nbsp;
+                            <span>{{'Call Chain'}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/controlFlowApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-fw fa-table"></i>&nbsp;
+                            <span>{{'Control Flow'}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/programprocessflowExt']" title="Program Process Flow" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-sitemap fa-rotate-270"></i>
+                            <span>{{'Program Process Flow'}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li> 
+         </div>
+        <a [routerLink]="['/sankey']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-area-chart"></i>
+            <span>{{'Sankey Diagram'}}</span>
+        </a>
+        <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass1('pages1')">
+                    <i id="expandMinimize1" class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'Business Rule Extraction' }}</span>
+                </a> 
+                <li class="nested" [class.expand]="showMenu1 === 'pages1'">
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['/bre']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-desktop"></i>
+                                <span>{{ 'Detailed Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/brereport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-list"></i>
+                                <span>{{ 'Rules report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/brerule']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-table"></i>
+                                <span>{{ 'Rule Category' }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
+             </div>
+             <a [routerLink]="['/naturalMapScreen']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-fw fa-desktop"></i>
+                <span>{{ 'Screen Definition Report' }}</span>
+            </a>
+        <a [routerLink]="['/missingcompApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Missing Component' }}</span>
+        </a>
+        <a [routerLink]="['/commentedlinesApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-th-list"></i>
+            <span>{{ 'Commented Lines Report' }}</span>
+        </a>
+        <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass('pages')">
+                    <i id="expandMinimize" class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'Technical Debt Report' }}</span>
+                </a> 
+                <li class="nested" [class.expand]="showMenu === 'pages'">
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['/orphanApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-th-list"></i>
+                                <span>{{ 'Orphan Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/dropimpactApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-table"></i>
+                                <span>{{ 'Drop Impact Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/deadparaReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-list-ul"></i>
+                                <span>{{ 'Dead Para Report' }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
+             </div> 
+    </div>
+    <!-- PLSQL -->
+	<div class="list-group" *ngIf="isPLSQL">
+        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+            <span>{{ 'Dashboard' }}</span>  
+        </a>
+        <a [routerLink]="['/masterinvApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Master Inventory' }}</span>
+        </a>
+        <a [routerLink]="['/xrefApplicationReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-th-list"></i>&nbsp;
+            <span>{{ 'X-Ref Report' }}</span>
+        </a>
+        <a [routerLink]="['/formsApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-edit"></i>&nbsp;
+            <span>{{ 'CRUD' }}</span>
+        </a>
+		<a [routerLink]="['/spiderchartApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+			<i class="fa fa-fw fa-table"></i>&nbsp;
+			<span>{{ 'Spider' }}</span>
+		</a>
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass2('pages2')">
+                <i id="expandMinimize2" class="fa fa-plus"></i>&nbsp;
+                <span>{{ 'Flow Diagrams' }}</span>
+            </a> 
+            <li class="nested" [class.expand]="showMenu2 === 'pages2'">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLink]="['/callChainplsqlApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-th-list"></i>&nbsp;
+                            <span>{{'Call Chain'}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/controlFlowApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-fw fa-table"></i>&nbsp;
+                            <span>{{'Control Flow'}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/components']" title="Program Process Flow" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-sitemap fa-rotate-270"></i>&nbsp;
+                            <span>{{'Program Process Flow'}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li> 
+        </div>
+        <a [routerLink]="['/sankey']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-area-chart"></i>
+            <span>{{'Sankey Diagram'}}</span>
+        </a>
+        <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass1('pages1')">
+                    <i id="expandMinimize1" class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'Business Rule Extraction' }}</span>
+                </a> 
+                <li class="nested" [class.expand]="showMenu1 === 'pages1'">
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['/bredetailedreportApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-desktop"></i>
+                                <span>{{ 'Detailed Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/brereportplsqlApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-list"></i>
+                                <span>{{ 'Rules report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/brerule']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-table"></i>
+                                <span>{{ 'Rule Category' }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
+             </div>
+        <a [routerLink]="['/missingcompApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Missing Component' }}</span>
+        </a>
+        <a [routerLink]="['/commentedlinesApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-th-list"></i>
+            <span>{{ 'Commented Lines Report' }}</span>
+        </a>
+        <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass('pages')">
+                    <i id="expandMinimize" class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'Technical Debt Report' }}</span>
+                </a> 
+                <li class="nested" [class.expand]="showMenu === 'pages'">
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['/orphanApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-th-list"></i>
+                                <span>{{ 'Orphan Report' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/dropimpactApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-table"></i>
+                                <span>{{ 'Drop Impact Report' }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
+             </div> 
+    </div>
+    <!-- VB .NET -->
+    <div class="list-group" *ngIf="ifVBNET">
+        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+            <span>{{ 'Dashboard' }}</span>
+        </a>
+        <a [routerLink]="['/masterinvApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-table"></i>&nbsp;
+            <span>{{ 'Master Inventory' }}</span>
+        </a>
+        <a [routerLink]="['/xrefApplicationReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-th-list"></i>&nbsp;
+            <span>{{ 'X-Ref Report' }}</span>
+        </a>
+        <a [routerLink]="['/formsApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-edit"></i>&nbsp;
+            <span>{{ 'CRUD' }}</span>
+        </a>
+        <a [routerLink]="['/glossary']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-list"></i>&nbsp;
+            <span>{{ 'Glossary' }}</span>
+        </a>
+		<a [routerLink]="['/spiderchartApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+			<i class="fa fa-fw fa-table"></i>&nbsp;
+			<span>{{ 'Spider' }}</span>
+		</a>
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass2('pages2')">
+                <i id="expandMinimize2" class="fa fa-plus"></i>&nbsp;
+                <span>{{ 'Flow Diagrams' }}</span>
+            </a> 
+            <li class="nested" [class.expand]="showMenu2 === 'pages2'">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLink]="['/callChainApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-th-list"></i>&nbsp;
+                            <span>{{'Call Chain'}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/controlFlowApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-fw fa-table"></i>&nbsp;
+                            <span>{{'Control Flow'}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/programprocessflowEvent']" title="Program Process Flow" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-sitemap fa-rotate-270"></i>
+                            <span>{{'Program Process Flow'}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li> 
+         </div>
+        <a [routerLink]="['/sankey']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-area-chart"></i>
+            <span>{{'Sankey Diagram'}}</span>
+        </a>
+        <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass1('pages1')">
+                    <i id="expandMinimize1" class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'Business Rule Extraction' }}</span>
+                </a> 
+                <li class="nested" [class.expand]="showMenu1 === 'pages1'">
+                    <ul class="submenu">
+                        <!-- <li>
+                            <a [routerLink]="['/bre']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-desktop"></i>
+                                <span>{{ 'Detailed Report' }}</span>
+                            </a>
+                        </li> -->
+                        <li> 
+                            <a [routerLink]="['/brereport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-list"></i>
+                                <span>{{ 'Rules report' }}</span>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a [routerLink]="['/brerule']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-table"></i>
+                                <span>{{ 'Rule Category' }}</span>
+                            </a>
+                        </li> -->
+                    </ul>
+                </li> 
+             </div>
+             <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass3('pages3')">
+                    <i id="expandMinimize3" class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'Screen Report' }}</span>
+                </a> 
+                <li class="nested" [class.expand]="showMenu3 === 'pages3'">
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['/cicsscreenApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-desktop"></i>
+                                <span>{{ 'Screen Definition' }}</span>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a [routerLink]="['/cicsrulesApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-table"></i>
+                                <span>{{ 'Validation Rules' }}</span>
+                            </a>
+                        </li> -->
+                        <!-- <li>
+                            <a [routerLink]="['/cicsxrefApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-list"></i>
+                                <span>{{ 'CICS X-Ref' }}</span>
+                            </a>
+                        </li> -->
+                    </ul>
+                </li> 
+            </div>
+            <a [routerLink]="['/impactReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-th-list"></i>&nbsp;
+                <span>{{ 'Variable Impact Report' }}</span>
+            </a>
+			<a [routerLink]="['/missingcompApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-fw fa-table"></i>&nbsp;
+				<span>{{ 'Missing Component' }}</span>
+			</a>
+        <a [routerLink]="['/commentedlinesApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-th-list"></i>
+            <span>{{ 'Commented Lines Report' }}</span>
+        </a>
+        <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass('pages')">
+                    <i id="expandMinimize" class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'Technical Debt Report' }}</span>
+                </a> 
+                <li class="nested" [class.expand]="showMenu === 'pages'">
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['/orphanApplication']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-th-list"></i>
+                                <span>{{ 'Orphan Report' }}</span>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a [routerLink]="['/dropimpactApp']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-table"></i>
+                                <span>{{ 'Drop Impact Report' }}</span>
+                            </a>
+                        </li> -->
+                        <!-- <li>
+                            <a [routerLink]="['/deadparaReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-list-ul"></i>
+                                <span>{{ 'Dead Para Report' }}</span>
+                            </a>
+                        </li>-->
+                     </ul>
+                </li> 
+             </div>
+			<a [routerLink]="['/userguide']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+				<i class="fa fa-user-circle-o "></i>&nbsp;
+				<span>{{ 'User Guide' }}</span>
+			</a>
+    </div>
+    <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
+        <i id="collapseExpand" class="fa fa-fw fa-angle-double-left"></i>&nbsp;
+        <span>{{ 'Collapse Sidebar'}}</span>
+    </div>
+</nav>

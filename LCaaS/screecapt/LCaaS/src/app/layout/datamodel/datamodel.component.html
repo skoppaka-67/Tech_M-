@@ -1,0 +1,89 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Forward Engineering'" [icon]="'fa fa-fw fa-share'"></app-page-header>
+</div>
+<!-- <div>
+  <ng-template #pdfShow let-c="close" let-d="dismiss">
+      <div class="modal-header" id="pdfShowheader">
+      <label id="pdfShow" >Doc Template</label>
+      <label class="close" aria-label="Close" (click)="d('Cross click')">
+          <span aria-hidden="true">&times;</span>
+      </label>
+      </div>
+      <div class="modal-body" id="pdfShow">
+      </div>
+  </ng-template>
+  </div>
+  <div>-->
+<div> 
+  <ng-template #jhippy let-c="close" let-d="dismiss">
+    <div class="modal-header" id="jhippy">
+      <label id="jhipster" >JDL</label>
+      <label class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </label>
+    </div>
+    <div class="modal-body" id="jhipsterJDL">
+    </div>
+  </ng-template>
+</div>
+<div>
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header" id="content">
+      <label id="jhipster" >Application</label>
+      <label class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </label>
+    </div>
+    <div class="modal-body" id="jhipsterApp">
+    </div>
+  </ng-template>
+</div>
+<div> 
+  <ng-template #createApplication let-c="close" let-d="dismiss">
+    <div class="modal-header" id="jhippy">
+      <label id="jhipster" >Create Application</label>
+      <label class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </label>
+    </div>
+    <div class="modal-body" id="createApp">
+    </div>
+  </ng-template>
+</div>
+<div class="col-md-12" style="display:flex;">
+  <div class="col-md-3">
+      <!-- <button class="btn btn-primary" (click)="showPdf(pdfShow)">Template Document</button> -->
+  </div>
+  <div class="col-md-3">
+    <button class="btn btn-primary" (click)="showJDL(jhippy)">Show JDL</button>
+  </div>
+  <div class="col-md-3">
+    <button class="btn btn-primary" (click)="launchApp(content)">Launch Application</button>
+  </div>
+  <div class="col-md-2">
+    <!-- <button class="btn btn-primary" (click)="createApp(createApplication)">Create Application</button> -->
+  </div>
+  <div class="col-md-1">
+      <a (click)="exportAsXLSX()" onmouseover="" class="menu_links" style="cursor: pointer;">
+      <img src="assets/images/export.png" height="25" width="25" style="float:right"/></a>
+  </div>
+</div>
+<div id="divdatamodelreportcontent" class="row angular-with-newlines">
+  <div class="col-xl-12">
+    <div>
+     
+    <table #dtTable datatable id="dataModelReportTbl" style="overflow-wrap:break-word;border-spacing:0px;width:100%;" class="table table-striped table-bordered table-sm row-border hover" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+      <thead>
+        <tr>
+            <th style="text-align:center; color: white; background-color:dimgray; font-size: 9pt;" *ngFor="let header of dataSets.headers">{{header | uppercase}}</th>            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of dataSets.data">
+          <td style="overflow-wrap: break-word;" *ngFor="let header of dataSets.headers">{{item[header]}}</td>
+          </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+</div>

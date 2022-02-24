@@ -1,0 +1,24 @@
+TW Version - May 26
+1. Dashboard link to master inventory to new components.
+2. Dashboard hide Inbound OutBound Chart.
+saneky chart border change
+
+3. Program process flow - Show expanded show code instead of show code.
+4. Flow chart - size and align to center is removed.
+5. BRE 2 - flow chart align to center is removed.
+6. Hash handling in Spider, Call chain and control flow.
+7. Application filter in all reports and diagrams.
+
+
+TW Custom changes: -> prod
+1. Dashboard - No. of tables -> No. of Datafiles
+2. Dashboard - Links to reports -> New link to application filter reports
+3. Process flow - External Call change
+4. Process flow - Flow chart - center fix change
+5. BRE 2 - Flow chart - center fix change
+6. Process flow - Expanded show code instead of show code
+7. Sidebar change to filter containing components
+8. Chart seperation change
+9. BRE 2 - Hyperlink - change in delay
+10. Dashboard inbound OutBound chart removed 
+11. Dashboard rules by chart seperation and adding no of rules to display

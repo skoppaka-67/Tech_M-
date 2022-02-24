@@ -1,0 +1,27 @@
+.ngx-charts
+{
+    height: 1000px !important;
+}
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.selectable {
+    -webkit-touch-callout: text;
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text; 
+  }
+.modal-body {
+    max-height: 80vh; /* max 80% of the viewport height */
+    overflow-y: auto;
+    overflow-x: hidden !important;
+    scroll-behavior: smooth;
+}
+

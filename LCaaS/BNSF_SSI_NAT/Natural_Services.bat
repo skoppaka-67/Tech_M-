@@ -1,0 +1,1 @@
+"C:\Users\ADMIN\AppData\Local\Programs\Python\Python39\python.exe" "D:\TechM\VB\VB_natural_adabas\Natural_Services.py"
